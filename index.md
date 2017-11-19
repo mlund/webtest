@@ -4,10 +4,10 @@ layout: splash
 header:
   overlay_color: "#000"
   overlay_filter: "0.5"
-  overlay_image: # /assets/images/unsplash-image-1.jpg
+  overlay_image: http://www.worldtechtoday.com/wp-content/uploads/2016/04/bigstock-Water-Molecules-984772.jpg
   cta_label: "Download"
   cta_url: "https://github.com/mlund/faunus/releases/latest"
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+  caption: # "Photo credit: [**Unsplash**](https://unsplash.com)"
 excerpt: "Faunus is a C++ framework for Metropolis Monte Carlo simulations of molecular systems"
 intro: 
   - excerpt: 'Nullam suscipit et nam, tellus velit pellentesque at malesuada, enim eaque. Quis nulla, netus tempor in diam gravida tincidunt, *proin faucibus* voluptate felis id sollicitudin. Centered with `type="center"`'
