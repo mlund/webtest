@@ -1,6 +1,6 @@
-remote_theme: "mmistakes/minimal-mistakes"
 plugins:
       - jekyll-remote-theme
+remote_theme: "mmistakes/minimal-mistakes"
 
 # Welcome to Jekyll!
 #
