@@ -3,9 +3,14 @@ layout: single
 toc: true
 ---
 
-# Welcome to nFaunus
+# HEJSA
 
 ## Installation
+
+```.bash
+git clone http://github.com/mlund/faunus.git
+cd faunus
+```
 
 ### Requirements
 
