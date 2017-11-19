@@ -13,13 +13,13 @@ docs:
  - title: Getting Started
    children:
        - title: Requirements
-         url: docs/requirements
+         url: /docs/requirements
        - title: Installing
-         url: docs/install
+         url: /docs/install
  - title: Simulation Input
    children:
        - title: Simulation containers
        - title: The Hamiltonian
        - title: Monte Carlo Moves
-         url: docs/moves/
+         url: /docs/moves/
        - title: Analysis
