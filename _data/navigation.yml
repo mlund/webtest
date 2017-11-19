@@ -2,5 +2,19 @@
 main:
   - title: "Home"
     url: /
-  - title: "About"
-    url: /about/
+  - title: "Docs"
+    url: /docs
+
+docs:
+ - title: Getting Started
+   children:
+       - title: Requirements
+         url: docs/requirements
+       - title: Installing
+         url: docs/install
+ - title: Simulation Input
+   children:
+       - title: Simulation containers
+       - title: The Hamiltonian
+       - title: Monte Carlo Moves
+       - title: Analysis

@@ -1,5 +1,7 @@
 ---
-permalink: /about/
+permalink: /docs/
+sidebar:
+    nav: "docs"
 ---
 
 # User Manual
