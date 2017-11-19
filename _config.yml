@@ -7,14 +7,14 @@ remote_theme: "mmistakes/minimal-mistakes"
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
-minimal_mistakes_skin    : "dark" #"default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "default" #"default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en"
 title                    : "Faunus - A Framework for Molecular Simulation"
 title_separator          : "-"
 name                     : "Mikael Lund"
-description              : "Official websit of Faunus"
+description              : "Official homepage of Faunus"
 url                      : "https://mlund.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/webtest" # the subpath of your site, e.g. "/blog"
 repository               : "mlund/webtest" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"

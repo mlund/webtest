@@ -9,26 +9,20 @@ header:
   cta_url: "https://github.com/mlund/faunus/releases/latest"
   caption: # "Photo credit: [**Unsplash**](https://unsplash.com)"
 excerpt: "Faunus is a C++ framework for Metropolis Monte Carlo simulations of molecular systems"
-intro: 
-  - excerpt: 'Nullam suscipit et nam, tellus velit pellentesque at malesuada, enim eaque. Quis nulla, netus tempor in diam gravida tincidunt, *proin faucibus* voluptate felis id sollicitudin. Centered with `type="center"`'
-feature_row:
-  - image_path: assets/images/unsplash-gallery-image-1-th.jpg
-    alt: "placeholder image 1"
-    title: "Placeholder 1"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
-  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
-    alt: "placeholder image 2"
-    title: "Placeholder 2"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
-    url: "#test-link"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/unsplash-gallery-image-3-th.jpg
-    title: "Placeholder 3"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
 ---
 
-{% include feature_row id="intro" type="center" %}
+Faunus is a C++ framework for Metropolis Monte Carlo simulations of
+molecular systems. Below is a brief overview of features:
 
-{% include feature_row %}
+- Canonical, Grand Canonical, Isobaric-Isothermal statistical mechanical ensembles
+- General hamiltonian **parallel tempering** (temperature, screening length, bonds etc.)
+- **Anisotropic** atoms (multipoles, sphero-cylinders, capped particles)
+- Ion titration moves (pKa prediction, Hofmeister effects etc.)
+- Highy modular
+- Free and open source (**GPL**)
 
+Detailed information and support:
+
+- Support: <http://github.com/mlund/faunus/issues>
+- Source code: <http://github.com/mlund/faunus>
+- Code documentation: <https://codedocs.xyz/mlund/faunus>
