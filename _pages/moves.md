@@ -1,5 +1,5 @@
 ---
-permalink: /docs/moves
+permalink: /docs/moves/
 ---
 
 # Monte-Carlo Moves
