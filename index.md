@@ -16,7 +16,7 @@ git clone http://github.com/mlund/faunus.git
 cd faunus
 ~~~
 
-Some math $\int_0^{\infty} dx$.
+Some math $$\int_0^{\infty} dx$$.
 
 ### Requirements
 
