@@ -21,4 +21,5 @@ docs:
        - title: Simulation containers
        - title: The Hamiltonian
        - title: Monte Carlo Moves
+         url: docs/moves/
        - title: Analysis
