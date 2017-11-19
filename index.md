@@ -3,7 +3,7 @@ title: "Welcome to Faunus"
 layout: splash
 header:
   overlay_color: "#000"
-  overlay_filter: "0.3"
+  overlay_filter: "0.1"
   overlay_image: http://www.worldtechtoday.com/wp-content/uploads/2016/04/bigstock-Water-Molecules-984772.jpg
   cta_label: "Download"
   cta_url: "https://github.com/mlund/faunus/releases/latest"
