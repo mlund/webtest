@@ -18,6 +18,8 @@ docs:
          url: /docs/install
  - title: Simulation Input
    children:
+       - title: topology
+         url: /topology/
        - title: Simulation containers
        - title: The Hamiltonian
        - title: Monte Carlo Moves
