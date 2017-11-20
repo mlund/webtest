@@ -1,5 +1,5 @@
 ---
-title: "Welcome to Fau&#951;u&#962;"
+title: "Welcome to Fau&#951;us"
 layout: splash
 header:
   overlay_color: "#000"
