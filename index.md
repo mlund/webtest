@@ -1,5 +1,5 @@
 ---
-title: "Welcome to Faunus"
+title: "Welcome to &#951;Faunus"
 layout: splash
 header:
   overlay_color: "#000"
@@ -8,11 +8,10 @@ header:
   cta_label: "Download"
   cta_url: "https://github.com/mlund/faunus/releases/latest"
   caption: # "Photo credit: [**Unsplash**](https://unsplash.com)"
-excerpt: "Faunus is a C++ framework for Metropolis Monte Carlo simulations of molecular systems"
+excerpt: "A C++ framework for Metropolis Monte Carlo simulations of molecular systems"
 ---
 
-Faunus is a C++ framework for Metropolis Monte Carlo simulations of
-molecular systems. Below is a brief overview of features:
+Below is a brief overview of features:
 
 - Canonical, Grand Canonical, Isobaric-Isothermal statistical mechanical ensembles
 - General hamiltonian **parallel tempering** (temperature, screening length, bonds etc.)
