@@ -1,5 +1,5 @@
 ---
-permalink: /topology
+permalink: /topology/
 sidebar:
     nav: "docs"
 ---
