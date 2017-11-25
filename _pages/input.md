@@ -3,8 +3,7 @@ permalink: /input/
 sidebar:
     nav: "docs"
 ---
-
-# Input Files
+# Handling Input and Output
 
 ## JSON Files
 
@@ -15,35 +14,67 @@ for melted NaCl for the `bulk.cpp` program:
 
 ~~~ json
 {
-    "atomlist" : {
-        "Na" : { "q": 1.0, "sigma":3.33, "eps":0.01158968, "dp":1.0 },
-        "Cl" : { "q":-1.0, "sigma":4.40, "eps":0.4184,     "dp":1.0 }
-    },
-    "moleculelist" : { 
-        "salt" : { "atoms":"Na Cl", "atomic":true, "Ninit":512 }
-    },
-    "moves" : {
-        "atomtranslate" : { "salt" : { "peratom":true } }
-    },
-    "energy" : {
-        "nonbonded" : { "epsr": 80.0, "cutoff":14.0 }
-    },
-    "analysis" : {
-        "xtcfile" : { "file": "traj.xtc", "nstep":20 },
-        "pqrfile" : { "file": "confout.pqr" },
-        "atomrdf" : { "nstep":10, "pairs" :
-              [
-                  { "name1":"Na", "name2":"Cl", "dim":3, "dr":0.1, "file":"rdf_nacl.dat"},
-                  { "name1":"Na", "name2":"Na", "dim":3, "dr":0.1, "file":"rdf_nana.dat"}
-              ]
-          }
-      },
-    "system" : {
-        "temperature" : 1100,
-        "geometry" : { "length":40 }
+  "atomlist" : {
+    "Na": {"q": 1, "sigma":3.3, "eps":0.3, "dp":1.0},
+    "Cl": {"q":-1, "sigma":4.4, "eps":0.4, "dp":1.0}
+  },
+  "moleculelist" : { 
+    "salt" : { "atoms":"Na Cl", "atomic":true, "Ninit":512}
+  },
+  "moves" : {
+    "atomtranslate" : { "salt" : { "peratom":true } }
+  },
+  "energy" : {
+    "nonbonded" : { "epsr": 80.0, "cutoff":14 }
+  },
+  "analysis" : {
+    "xtcfile" : { "file": "traj.xtc", "nstep":20 },
+    "pqrfile" : { "file": "confout.pqr" },
+    "atomrdf" : { "nstep":10, "pairs" :
+      [
+        {"name1":"Na", "name2":"Cl", "dr":0.1, "file":"rdf1.dat"},
+        {"name1":"Na", "name2":"Na", "dr":0.1, "file":"rdf2.dat"}
+      ]
     }
+  },
+  "system" : {
+      "temperature" : 1100,
+      "geometry" : { "length":40 }
+  }
 }
 ~~~
+
+### Reading From Python
+
+~~~ python
+import json
+with open('move_out.json') as f:
+    data = json.load(f)
+    print( data['moves']['Single Particle Translation']['trials'] ) # --> 602580
+~~~
+
+### Reading From C++11
+
+~~~ cpp
+#include <iostream>
+#include <json.hpp> // https://github.com/nlohmann/json
+
+int main() {
+    nlohmann::json j;
+    j << std::cin;
+    std::cout << j["moves"]["Single Particle Translation"]["trials"]; // --> 602580
+}
+~~~
+
+## Editing
+
+Python dictionaries can be directly converted to/from JSON which
+has the advantage of providing syntax checking. If you prefer to
+edit JSON files directly, simple syntax highlighting in the VIM editor
+is possible by by adding 
+the following to `~/.vimrc`:
+
+    au! BufRead,BufNewFile *.json set filetype=javascript
 
 ## YAML Files
 
@@ -70,72 +101,37 @@ Example YAML file from a Monte Carlo move class:
 
 ~~~ yaml
 moves:
-    Single Particle Translation:
-        acceptance: 0.637203358890106
-        atoms:
-            Na: {acceptance: 63.7203358890106, dp: 1, mean displacement: 0.385081517298659}
-        dir: [1, 1, 1]
-        moves/particle: 20086
-        relative time: 0.483203542345245
-        trials: 602580
+  Single Particle Translation:
+    acceptance: 0.63720
+    atoms:
+        Na: {acceptance: 63.7, dp: 1, mean displacement: 0.385}
+    dir: [1, 1, 1]
+    moves/particle: 20086
+    relative time: 0.483
+    trials: 602580
 ~~~
 
 which is less verbose than the corresponding JSON file,
 
 ~~~ json
 {
-    "moves" {
-        "Single Particle Translation": {
-            "acceptance": 0.637203358890106,
-            "atoms": {
-                "Na": {
-                    "acceptance": 63.7203358890106,
-                    "dp": 1,
-                    "mean displacement": 0.385081517298659
-                }
-            },
-            "dir": [ 1, 1, 1 ],
-            "moves/particle": 20086,
-            "relative time": 0.483203542345245,
-            "trials": 602580
-        },
-    }
+  "moves" {
+    "Single Particle Translation": {
+      "acceptance": 0.637,
+      "atoms": {
+        "Na": {
+          "acceptance": 63.72,
+          "dp": 1,
+          "mean displacement": 0.385                }
+      },
+      "dir": [ 1, 1, 1 ],
+      "moves/particle": 20086,
+      "relative time": 0.483,
+      "trials": 602580
+    },
+  }
 }
 ~~~
-
-## Reading JSON files
-
-### From Python
-
-~~~ python
-import json
-with open('move_out.json') as f:
-    data = json.load(f)
-    print( data['moves']['Single Particle Translation']['trials'] ) # --> 602580
-~~~
-
-### From C++11
-
-~~~ cpp
-#include <iostream>
-#include <json.hpp> // https://github.com/nlohmann/json
-
-int main() {
-    nlohmann::json j;
-    j << std::cin;
-    std::cout << j["moves"]["Single Particle Translation"]["trials"]; // --> 602580
-}
-~~~
-
-## Editing JSON Files
-
-Python dictionaries can be directly converted to/from JSON which
-has the advantage of providing syntax checking. If you prefer to
-edit JSON files directly, simple syntax highlighting in the VIM editor
-is possible by by adding 
-the following to `~/.vimrc`:
-
-    au! BufRead,BufNewFile *.json set filetype=javascript
 
 
 # Misc
