@@ -66,7 +66,7 @@ int main() {
 }
 ~~~
 
-## Editing
+### Editing
 
 Python dictionaries can be directly converted to/from JSON which
 has the advantage of providing syntax checking. If you prefer to
@@ -76,26 +76,30 @@ the following to `~/.vimrc`:
 
     au! BufRead,BufNewFile *.json set filetype=javascript
 
-## YAML Files
+### YAML Conversion
 
-JSON is a subset of the more general format YAML and the latter can be made
-more human readable. To convert between JSON and YAML we
+JSON is a subset of the more general format YAML which is more human readablee.
+To convert between JSON and YAML we
 provide a script, `scripts/yason.py`, that can pass
 YAML (and JSON) input files,
 
-    $ yason.py < input.yml | ./myprogram
+~~~ bash
+yason.py < input.yml | ./myprogram
+~~~
 
 where we assume that `myprogram` reads JSON from standard input, which
 in C++ would be achieved like this:
 
 ~~~ cpp
-Tmjson in;
-std::cin >> in;
+nlohmann::json j;
+std::cin >> j;
 ~~~
 
 The script can also be used oppositely to pretty print JSON as YAML,
 
-    yason.py --color move_out.json
+~~~ bash
+yason.py --color move_out.json
+~~~
 
 Example YAML file from a Monte Carlo move class:
 
@@ -148,26 +152,32 @@ Start by making a new directory (anywhere you want), put your source file there,
 and make a `CMakeLists.txt` file telling CMake about the new executable.
 For example:
 
-    $ cd $HOME/newproject
-    $ cat hello.cpp
+~~~ bash
+$ cd $HOME/newproject
+$ cat hello.cpp
 
-    #include <faunus/faunus.h>
-    int main() {
-      Faunus::Point a(0,0,0);
-    }
+#include <faunus/faunus.h>
+int main() {
+  Faunus::Point a(0,0,0);
+}
 
-    $ echo 'fau_example(hello "./" hello.cpp)' > CMakeLists.txt
+$ echo 'fau_example(hello "./" hello.cpp)' > CMakeLists.txt
+~~~
 
 Return to the main faunus directory and rerun `cmake` with the following command:
 
-    $ cd $HOME/faunus
-    $ cmake . -DMYPLAYGROUND=$HOME/newproject  # absolute path!
+~~~ bash
+cd $HOME/faunus
+cmake . -DMYPLAYGROUND=$HOME/newproject  # absolute path!
+~~~
 
 That's it! A `Makefile` for your new target, `hello`, has been generated and you can compile
 directly from the `newproject` directory:
 
-    $ cd $HOME/newproject
-    $ make
+~~~ bash
+cd $HOME/newproject
+make
+~~~
 
 Note that all options selected when configuring faunus will be applied to `hello` as well,
 and any changes to the faunus code base will trigger re-compilation upon running `make`.
