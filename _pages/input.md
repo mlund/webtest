@@ -108,7 +108,7 @@ moves:
   Single Particle Translation:
     acceptance: 0.63720
     atoms:
-        Na: {acceptance: 63.7, dp: 1, mean displacement: 0.385}
+      Na: {acceptance: 63.7, dp: 1, mean displacement: 0.385}
     dir: [1, 1, 1]
     moves/particle: 20086
     relative time: 0.483
@@ -126,7 +126,7 @@ which is less verbose than the corresponding JSON file,
         "Na": {
           "acceptance": 63.72,
           "dp": 1,
-          "mean displacement": 0.385                }
+          "mean displacement": 0.385}
       },
       "dir": [ 1, 1, 1 ],
       "moves/particle": 20086,
