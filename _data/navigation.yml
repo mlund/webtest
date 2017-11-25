@@ -18,6 +18,8 @@ docs:
          url: /docs/install
  - title: Simulation Input
    children:
+       - title: Working with Input Files
+         url: /input/
        - title: Topology
          url: /topology/
        - title: Simulation containers
