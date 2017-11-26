@@ -3,11 +3,15 @@ permalink: /input/
 sidebar:
     nav: "docs"
 ---
+
 # Handling Input and Output
+
+In this section we describe the type of input you can use with Faunus.
 
 ## JSON Files
 
-Faunus natively uses JSON files for input and, in many cases, also for output.
+Faunus natively uses the [JSON format](http://json.org/example.html) for input and,
+in many cases, also for output.
 It is a structured format that can be easily loaded/saved from most programming
 languages such as Python, C++ etc. Here's an example of an input file
 for melted NaCl for the `bulk.cpp` program:
@@ -66,7 +70,7 @@ int main() {
 }
 ~~~
 
-### Editing
+### Syntax Highlighting
 
 Python dictionaries can be directly converted to/from JSON which
 has the advantage of providing syntax checking. If you prefer to
@@ -76,9 +80,9 @@ the following to `~/.vimrc`:
 
     au! BufRead,BufNewFile *.json set filetype=javascript
 
-### YAML Conversion
+### Conversion to/from YAML
 
-JSON is a subset of the more general format YAML which is more human readablee.
+JSON is a subset of the more general [YAML format](http://www.yaml.org) which is more human readablee.
 To convert between JSON and YAML we
 provide a script, `scripts/yason.py`, that can pass
 YAML (and JSON) input files,

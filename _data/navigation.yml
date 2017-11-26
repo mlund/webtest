@@ -16,6 +16,8 @@ docs:
          url: /docs/requirements
        - title: Installing
          url: /docs/install
+       - title: Developer Guide
+         url: /developer/
  - title: Simulation Input
    children:
        - title: Working with Input Files
