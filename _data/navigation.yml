@@ -26,6 +26,7 @@ docs:
          url: /topology/
        - title: Simulation containers
        - title: The Hamiltonian
+         url: /energy/
        - title: Monte Carlo Moves
          url: /docs/moves/
        - title: Analysis
