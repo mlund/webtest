@@ -65,7 +65,6 @@ The splitting function is selected with `type` that can be any of the following:
 
 Note that $$\mathcal{S}(q)$$ is _splined_ and all types thus evaluate at roughly
 the same speed.
-This is a warning! Other warnings are "danger", "success", "info", "primary" or just `.notice`.
 {: .notice}
 
 Additional information regarding electrostatics:
