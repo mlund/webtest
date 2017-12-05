@@ -17,9 +17,7 @@ This energy term adds a pair-wise additive potential to the Hamiltonian, looping
 
 $$ U_{nb} = \sum_i\sum_j u_{ij}(\textbf{r}_{ij}) $$
 
-### Pair Potentials
-
-#### Electrostatics
+### Electrostatics
 `coulomb`
 
 Beyond a spherical cutoff, $$R_c$$, the potential is zero while if
@@ -55,7 +53,7 @@ will be splined during construction and thus evaluate at similar speeds:
  - [On the dielectric constant](http://dx.doi.org/10.1080/00268978300102721)
  - [Generalized reaction field using ionic strength](http://dx.doi.org/10.1063/1.469273)
 
-#### Lennard-Jones
+### Lennard-Jones
 `lennardjones`
 
 The Lennard-Jones potential has the form:
