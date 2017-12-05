@@ -32,7 +32,6 @@ time and cannot be arbitrarily selected from input.
 Below is a description of the individual pair-potentials and their input.
 
 ### Electrostatics
-_Keyword:_ `coulomb`
 
 This is a versatile pair potential that handles several variants of electrostatic
 pair-potentials.
@@ -41,8 +40,16 @@ below,
 
 $$ u_{ij} = \frac{q_i q_j }{ 4\pi\epsilon_0\epsilon_r r_{ij} }\mathcal{S}(q)$$
 
-where $$q=r/R_c$$, and $$\mathcal{S}$$ is a splined splitting function
-that is determined by the keyword `type`:
+where $$q=r/R_c$$, and $$\mathcal{S}$$ is a splitting function described below.
+The following keywords are _required_:
+
+ `coulomb`   | type     | Description
+ ----------- | -------- | -------------------------------------------------
+ `type`      | `str`    | Type of potential as defined above
+ `cutoff`    | `float`  | Spherical cutoff after which the potential is zero
+ `epsr`      | `float`  | Relative dielectric constant of the medium
+
+The splitting function is selected with `type` that can be any of the following:
 
  `type`          | $$\mathcal{S}(q=r/R_c)$$               | Additional keywords  | Comment
  --------------- | -------------------------------------- | -------------------- | ----------------------
@@ -56,28 +63,24 @@ that is determined by the keyword `type`:
  `reactionfield` | $$ 1 + \frac{\epsilon_{RF}-\epsilon_{r}}{2\epsilon_{RF}+\epsilon_{r}} q^3  - 3\frac{\epsilon_{RF}}{2\epsilon_{RF}+\epsilon_{r}}q $$      | `epsrf`     | [doi](http://doi.org/dbs99w)
  `yukawa`        | $$ e^{-\kappa R_c q}-e^{-\kappa R_c}$$  | `debyelength`        | [ISBN](https://isbnsearch.org/isbn/0486652424)
 
-The following keywords are _required_ for all types,
+Note that $$\mathcal{S}(q)$$ is _splined_ and all types thus evaluate at roughly
+the same speed.
+This is a warning! Other warnings are "danger", "success", "info", "primary" or just `.notice`.
+{: .notice}
 
- Keyword     | type     | Description
- ----------- | -------- | -------------------------------------------------
- `type`      | `str`    | Type of potential as defined above
- `cutoff`    | `float`  | Spherical cutoff after which the potential is zero
- `epsr`      | `float`  | Relative dielectric constant of the medium
-
- Additional information regarding electrostatics:
+Additional information regarding electrostatics:
 
  - [On the dielectric constant](http://dx.doi.org/10.1080/00268978300102721)
  - [Generalized reaction field using ionic strength](http://dx.doi.org/10.1063/1.469273)
 
 ### Lennard-Jones
-_Keyword:_ `lennardjones`
 
 The Lennard-Jones potential has the form:
 
 $$ u_{ij} = 4\epsilon_{ij} \left (
     \left ( \frac{\sigma_{ij}} {r_{ij})} \right )^{12} - \left ( \frac{\sigma_{ij}}{r_{ij})}\right )^6 \right ) $$
 
-where the default mixing rule is Lorentz-Berthelot:
+where the default mixing rule is Lorentz-Berthelot (LB):
 
 $$\sigma_{ij} = \frac{\sigma_i+\sigma_j}{2}$$
 
@@ -85,8 +88,8 @@ and
 
 $$\epsilon_{ij} = \sqrt{\epsilon_i \epsilon_j}$$.
 
-Keyword    | type   | Description
----------  | ------ | ------------------------------------------------
-`mixing`   | `str`  | Mixing rule, `LB`
-`ljcustom` | `list`  | Custom $$\epsilon$$ and $$\sigma$$ combinations
+`lennardjones` |  Description
+-------------  |  ------------------------------------------------
+`mixing=LB`    |  Mixing rule, `LB`
+`ljcustom`     |  Custom $$\epsilon$$ and $$\sigma$$ combinations
 

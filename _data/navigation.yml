@@ -16,11 +16,11 @@ docs:
          url: /docs/requirements
        - title: Installing
          url: /docs/install
-       - title: Developer Guide
+       - title: Developer guide
          url: /developer/
  - title: Simulation Input
    children:
-       - title: Working with Input Files
+       - title: Input files
          url: /input/
        - title: Topology
          url: /topology/
