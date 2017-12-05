@@ -23,19 +23,20 @@ energy:
 
 ## Nonbonded Interactions
 
-This term loops over pairs of atoms, $$i$$, and $$j$$, summing their a given pair-wise additive potential, $$u_{ij}$$,
+This term loops over pairs of atoms, $$i$$, and $$j$$, summing a given pair-wise additive potential, $$u_{ij}$$,
 
 $$ U_{NB} = \sum_i\sum_j u(\textbf{r}_{ij})$$
 
 Note: the pair-potential can be a combination of several potentials, but this must currently be defined at _compile
-time_ and cannot be arbitrarily selected from input.
+time_ and cannot be arbitrarily selected from input. Predefined combinations:
+- `nonbonded_coulomblj` &#8594; `coulomb`+`lennardjones`
 {: .notice--info}
 
-Pre-defines pair-potential combinations:
+Predefined pair-potential combinations:
 
-Keyword                  |  Pair-potential(s)
------------------------- |  -------------------------
-`nonbonded_coulomblj`    |  `coulomb`+`lennardjones`
+`energy`               |  Pair-potential(s)
+---------------------- |  -------------------------
+`nonbonded_coulomblj`  |  `coulomb`+`lennardjones`
 
 Below is a description of available pair-potentials and their configuration.
 
@@ -91,10 +92,14 @@ $$\sigma_{ij} = \frac{\sigma_i+\sigma_j}{2}$$
 
 and
 
-$$\epsilon_{ij} = \sqrt{\epsilon_i \epsilon_j}$$.
+$$\epsilon_{ij} = \sqrt{\epsilon_i \epsilon_j}$$
 
 `lennardjones` |  Description
 -------------  |  ------------------------------------------------
 `mixing=LB`    |  Mixing rule, `LB`
 `ljcustom`     |  Custom $$\epsilon$$ and $$\sigma$$ combinations
+
+## External Pressure
+
+## Bonded
 
