@@ -30,7 +30,7 @@ will be splined during construction and thus evaluate at similar speeds:
  `plain`         | $$ 1 $$                                | `none`               | [doi](http://doi.org/ctnnsj)
  `none`          | $$ 0 $$                                | `none`               | 
  `wolf`          | $$ erfc(\alpha R_c q)-erfc(\alpha R_c)q $$ | `alpha`          | [doi](http://doi.org/cfcxdk)
- `fennel`        | $$ erfc(\alpha R_c q)-erfc(\alpha R_c)q + ( q -1 ) q \left( erfc(\alpha R_c) + \frac{2\alpha R_c}{\sqrt{\pi}} e^{-\alpha^2 R_c^2} \right) $$ | `alpha`| [doi](http://doi.org/bqgmv2)
+ `fennel`        | $$ \scriptstyle erfc(\alpha R_c q)-erfc(\alpha R_c)q + ( q -1 ) q \left( erfc(\alpha R_c) + \frac{2\alpha R_c}{\sqrt{\pi}} e^{-\alpha^2 R_c^2} \right) $$ | `alpha`| [doi](http://doi.org/bqgmv2)
  `yonezawa`      | $$ 1 + erfc(\alpha R_c)q + q^2 $$      | `alpha`              | [doi](http://dx.doi.org/10/j97)
  `fanourgakis`   | $$ 1-\frac{7}{4}q+\frac{21}{4}q^5-7q^6+\frac{5}{2}q^7$$| none | [doi](http://doi.org/f639q5)
  `qpotential`     | $$ \prod_{n=1}^{order}(1-q^n) $$       | `order=300`         | [ISBN](http://goo.gl/hynRTS) (Paper V)
