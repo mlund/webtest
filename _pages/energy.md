@@ -9,7 +9,7 @@ sidebar:
 
 The system energy is described by a Hamiltonian where an arbitrary number of potential energy terms can be added,
 
-$$U_{sys} = U_1 + U_2 + ...
+$$U_{sys} = U_1 + U_2 + ... $$
 
 ## Nonbonded Interactions
 
@@ -17,9 +17,9 @@ This energy term adds a pair-wise additive potential to the Hamiltonian, looping
 
 $$ U_{nb} = \sum_i\sum_j u_{ij}(\textbf{r}_{ij}) $$
 
-## Pair Potentials
+### Pair Potentials
 
-### `Electrostatics`
+#### Electrostatics
 `coulomb`
 
 Beyond a spherical cutoff, $$R_c$$, the potential is zero while if
@@ -55,7 +55,7 @@ will be splined during construction and thus evaluate at similar speeds:
  - [On the dielectric constant](http://dx.doi.org/10.1080/00268978300102721)
  - [Generalized reaction field using ionic strength](http://dx.doi.org/10.1063/1.469273)
 
-### Lennard-Jones
+#### Lennard-Jones
 `lennardjones`
 
 The Lennard-Jones potential has the form:
@@ -63,5 +63,9 @@ The Lennard-Jones potential has the form:
 $$ u_{ij} = 4\epsilon_{ij} \left (
     \left ( \frac{\sigma_{ij}} {r_{ij})} \right )^{12} - \left ( \frac{\sigma_{ij}}{r_{ij})}\right )^6 \right ) $$
 
-where $$\sigma_{ij} = (\sigma_i+\sigma_j)/2$$ and $$\epsilon_{lj}=\epsilon$$ (Lorentz-Berthelot mixing).
+where the default mixing rule is Lorentz-Berthelot:
+
+$$\sigma_{ij} = (\sigma_i+\sigma_j)/2$$
+
+$$\epsilon_{lj}=\epsilon$$.
 
