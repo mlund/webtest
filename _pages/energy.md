@@ -15,16 +15,17 @@ $$U_{sys} = U_1 + U_2 + ...
 
 This energy term adds a pair-wise additive potential to the Hamiltonian, looping over pairs of particles, $$i$$, and $$j$$:
 
-$$ U_{nb} = \sum_i\sum_j u_{ij}(\textbf{r}) $$
+$$ U_{nb} = \sum_i\sum_j u_{ij}(\textbf{r}_{ij}) $$
 
 ## Pair Potentials
 
-### `coulomb`
+### `Electrostatics`
+`coulomb`
 
 Beyond a spherical cutoff, $$R_c$$, the potential is zero while if
 below,
 
-$$ u(r) = \frac{\lambda_B z_i z_j }{ r }\mathcal{S}(q)$$
+$$ u_{ij} = \frac{\lambda_B z_i z_j }{ r }\mathcal{S}(q)$$
 
 with $$q=r/R_c$$ is returned with the following splitting functions, $$\mathcal{S}$$, that
 will be splined during construction and thus evaluate at similar speeds:
@@ -54,11 +55,13 @@ will be splined during construction and thus evaluate at similar speeds:
  - [On the dielectric constant](http://dx.doi.org/10.1080/00268978300102721)
  - [Generalized reaction field using ionic strength](http://dx.doi.org/10.1063/1.469273)
 
-### `lennardjones`
+### Lennard-Jones
+`lennardjones`
 
 The Lennard-Jones potential has the form:
 
-$$ \beta u_{ij} = 4\epsilon_{ij} \left ( \frac{\sigma_{ij}}{r_{ij})}^{12} - \frac{\sigma_{ij}}{r_{ij})}^6 \right ) $$
+$$ u_{ij} = 4\epsilon_{ij} \left (
+    \left ( \frac{\sigma_{ij}} {r_{ij})} \right )^{12} - \left ( \frac{\sigma_{ij}}{r_{ij})}\right )^6 \right ) $$
 
 where $$\sigma_{ij} = (\sigma_i+\sigma_j)/2$$ and $$\epsilon_{lj}=\epsilon$$ (Lorentz-Berthelot mixing).
 
