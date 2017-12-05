@@ -63,9 +63,8 @@ The splitting function is selected with `type` that can be any of the following:
  `reactionfield` | $$ 1 + \frac{\epsilon_{RF}-\epsilon_{r}}{2\epsilon_{RF}+\epsilon_{r}} q^3  - 3\frac{\epsilon_{RF}}{2\epsilon_{RF}+\epsilon_{r}}q $$      | `epsrf`     | [doi](http://doi.org/dbs99w)
  `yukawa`        | $$ e^{-\kappa R_c q}-e^{-\kappa R_c}$$  | `debyelength`        | [ISBN](https://isbnsearch.org/isbn/0486652424)
 
-Note that $$\mathcal{S}(q)$$ is _splined_ and all types thus evaluate at roughly
-the same speed.
-{: .notice}
+Note: $$\mathcal{S}(q)$$ is _splined_ whereby all types evaluate at equally fast.
+{: .notice--info}
 
 Additional information regarding electrostatics:
 
