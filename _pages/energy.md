@@ -7,15 +7,19 @@ sidebar:
 
 # The Hamiltonian
 
-The system energy is described by a Hamiltonian where an arbitrary number of energy terms can be added.
+The system energy is described by a Hamiltonian where an arbitrary number of potential energy terms can be added,
+
+$$U_{sys} = U_1 + U_2 + ...
 
 ## Nonbonded Interactions
 
+This energy term adds a pair-wise additive potential to the Hamiltonian, looping over pairs of particles, $$i$$, and $$j$$:
+
+$$ U_{nb} = \sum_i\sum_j u_{ij}(\textbf{r}) $$
+
 ## Pair Potentials
 
-### Coulomb
-
-** Section: ** `colomb`
+### `coulomb`
 
 Beyond a spherical cutoff, $$R_c$$, the potential is zero while if
 below,
@@ -49,4 +53,12 @@ will be splined during construction and thus evaluate at similar speeds:
 
  - [On the dielectric constant](http://dx.doi.org/10.1080/00268978300102721)
  - [Generalized reaction field using ionic strength](http://dx.doi.org/10.1063/1.469273)
+
+### `lennardjones`
+
+The Lennard-Jones potential has the form:
+
+$$ \beta u_{ij} = 4\epsilon_{ij} \left ( \fracP{\sigma_{ij}}{r_{ij})^{12}} - \frac{\sigma_{ij}}{r_{ij})^6} \right ) $$
+
+where $$\sigma_{ij} = (\sigma_i+\sigma_j)/2$$ and $$\epsilon_{lj}=\epsilon$$ (Lorentz-Berthelot mixing).
 
