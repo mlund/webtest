@@ -27,8 +27,8 @@ This term loops over pairs of atoms, $$i$$, and $$j$$, summing a given pair-wise
 
 $$ U_{NB} = \sum_i\sum_j u(\textbf{r}_{ij})$$
 
-Note: the pair-potential can be a combination of several potentials, but this must currently be defined at _compile
-time_ and cannot be arbitrarily selected from input. Predefined combinations:
+**Note:** the pair-potential can be a combination of several potentials, but this must currently be defined at _compile
+time_ and cannot be arbitrarily selected from input. For a list of predefines combinations, see below.
 {: .notice--info}
 
 Predefined pair-potential combinations:
