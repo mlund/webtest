@@ -29,7 +29,7 @@ will be splined during construction and thus evaluate at similar speeds,
  `yonezawa`      | $ 1 + erfc(\alpha R_c)q + q^2 $      | `alpha`              | http://dx.doi.org/10/j97
  `fanourgakis`   | $ 1-\frac{7}{4}q+\frac{21}{4}q^5-7q^6+\frac{5}{2}q^7$| none | http://doi.org/f639q5
  `qpotential`     | $ \prod_{n=1}^{order}(1-q^n) $       | `order=300`          | ISBN [9789174224405](http://goo.gl/hynRTS) (Paper V)
- `reactionfield` | $ 1 + \frac{\varepsilon_{RF}-\varepsilon_{r}}{2\varepsilon_{RF}+\varepsilon_{r}} q^3  - 3\frac{\varepsilon_{RF}}{2\varepsilon_{RF}+\varepsilon_{r}}q $      | `epsrf`     | http://doi.org/dbs99w
+ `reactionfield` | $ 1 + \frac{\epsilon_{RF}-\epsilon_{r}}{2\epsilon_{RF}+\epsilon_{r}} q^3  - 3\frac{\epsilon_{RF}}{2\epsilon_{RF}+\epsilon_{r}}q $      | `epsrf`     | http://doi.org/dbs99w
  `yukawa`        | $ e^{-\kappa R_c q}-e^{-\kappa R_c}$  | `debyelength`        | ISBN 0486652424
 
  The following keywords are required for all types:
