@@ -58,7 +58,7 @@ will be splined during construction and thus evaluate at similar speeds:
 
 The Lennard-Jones potential has the form:
 
-$$ \beta u_{ij} = 4\epsilon_{ij} \left ( \fracP{\sigma_{ij}}{r_{ij})^{12}} - \frac{\sigma_{ij}}{r_{ij})^6} \right ) $$
+$$ \beta u_{ij} = 4\epsilon_{ij} \left ( \frac{\sigma_{ij}}{r_{ij})}^{12} - \frac{\sigma_{ij}}{r_{ij})}^6 \right ) $$
 
 where $$\sigma_{ij} = (\sigma_i+\sigma_j)/2$$ and $$\epsilon_{lj}=\epsilon$$ (Lorentz-Berthelot mixing).
 
