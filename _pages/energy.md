@@ -29,7 +29,13 @@ $$ U_{NB} = \sum_i\sum_j u(\textbf{r}_{ij})$$
 
 Note: the pair-potential can be a combination of several potentials, but this must currently be defined at _compile
 time_ and cannot be arbitrarily selected from input.
-{: .notice--primary}
+{: .notice--info}
+
+Pre-defines pair-potential combinations:
+
+Keyword                  |  Pair-potential(s)
+------------------------ |  -------------------------
+`nonbonded_coulomblj`    |  `coulomb`+`lennardjones`
 
 Below is a description of available pair-potentials and their configuration.
 
