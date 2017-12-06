@@ -9,7 +9,7 @@ sidebar:
 
 A simulation can have an arbitrary number of MC moves operating on molecules, atoms, the volume, or
 any other parameter affecting the system energy. The list of moves are defined by the `moves` section
-at the top level input, for example:
+at the top level input. For example:
 
 ~~~ yaml
 moves:
@@ -20,15 +20,6 @@ moves:
 
 ## Molecular Translation and Rotation
 
-This will simultaneously translate and rotate a molecular group by the following operation
-
-$$ \textbf{r}^N_{trial} = \mbox{Rot}(\textbf{r}^N) + $$`dptrans`$$\cdot \textbf{u} $$
-
-where $$\mbox{Rot}$$ rotates `dprot`$$\cdot \left (\zeta-\frac{1}{2} \right )$$ radians around a random unit vector
-from the mass center;
-$$\zeta$$ is a random number in the interval $$[0:1[$$ and
-$$\textbf{u}$$ is a random unit vector.
-
 `moltransrot`    |  Description
 ---------------- |  ---------------------------------
 `mol`            |  Molecule name to operate on
@@ -36,4 +27,14 @@ $$\textbf{u}$$ is a random unit vector.
 `dp`             |  Translational displacement parameter
 `dprot`          |  Rotational displacement parameter (radians)
 `repeat=N`       |  Number of repeats per MC sweep. `N` equals $N_{molid}$ times.
+
+This will simultaneously translate and rotate a molecular group by the following operation
+
+$$\textbf{r}^N_{trial} = \mbox{Rot}(\textbf{r}^N) + \delta$$
+
+where $$\mbox{Rot}$$ rotates `dprot`$$\cdot \left (\zeta-\frac{1}{2} \right )$$ radians around a random unit vector
+emanating from the mass center,
+$$\zeta$$ is a random number in the interval [0,1[, and
+$$\delta$$ is a random unit vector scaled by `dp`.
+
 
