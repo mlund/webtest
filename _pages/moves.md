@@ -22,12 +22,12 @@ moves:
 
 This will simultaneously translate and rotate a molecular group by the following operation
 
-$$ \textbf{r}^{N,\prime} = \mbox{Rot}(\textbf{r}^N) + \mbox{dptrans}\cdot \hat{u} $$
+$$ \textbf{r}^N_{trial} = \mbox{Rot}(\textbf{r}^N) + $$`dptrans`$$\cdot \textbf{u} $$
 
 where $$\mbox{Rot}$$ rotates `dprot`$$\cdot \left (\zeta-\frac{1}{2} \right )$$ radians around a random unit vector
 from the mass center;
 $$\zeta$$ is a random number in the interval $$[0:1[$$ and
-$$\hat{u}$$ is a random unit vector generated on a sphere.
+$$\textbf{u}$$ is a random unit vector.
 
 `moltransrot`    |  Description
 ---------------- |  ---------------------------------
