@@ -23,14 +23,14 @@ energy:
 
 ## Nonbonded Interactions
 
-`energy`               |         | Potential(s)
+`energy`               |         | $$u_{ij}$$
 -----------------------|---------|--------------------------
 `nonbonded_coulomblj`  | &#8594; | `coulomb`+`lennardjones`
 `nonbonded_coulombhs`  | &#8594; | `coulomb`+`hardsphere`
 
 This term loops over pairs of atoms, $$i$$, and $$j$$, summing a given pair-wise additive potential, $$u_{ij}$$,
 
-$$ U_{NB} = \sum_i\sum_j u(\textbf{r}_{ij})$$
+$$ U_{NB} = \sum_i\sum_j u_{ij}(\textbf{r}_j-\textbf{r}_i)$$
 
 **Note:** the pair-potential can be a combination of several potentials, but this must currently be defined at _compile
 time_ and cannot be arbitrarily selected from input. It is straight forward to add more by editing the class
