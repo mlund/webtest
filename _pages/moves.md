@@ -9,18 +9,25 @@ sidebar:
 
 A simulation can have an arbitrary number of MC moves operating on molecules, atoms, the volume, or
 any other parameter affecting the system energy. The list of moves are defined by the `moves` section
-at the top level input:
+at the top level input, for example:
 
 ~~~ yaml
 moves:
-    - moltransrot: { mol: water, dp: 2.0,
+    - moltransrot: { mol: water, dp: 2.0, repeat: N
                      dprot: 1.0, dir: [1,1,0] }
     - ...
 ~~~
 
 ## Molecular Translation and Rotation
 
-This will simultaneously translate and rotate a molecule.
+This will simultaneously translate and rotate a molecular group by the following operation
+
+$$ \textbf{r}^{N,\prime} = \mbox{Rot}(\textbf{r}^N) + \mbox{dptrans}\cdot \hat{u} $$
+
+where $$\mbox{Rot}$$ rotates `dprot`$$\cdot \left (\zeta-\frac{1}{2} \right )$$ radians around a random unit vector
+from the mass center;
+$$\zeta$$ is a random number in the interval $$[0:1[$$ and
+$$\hat{u}$$ is a random unit vector generated on a sphere.
 
 `moltransrot`    |  Description
 ---------------- |  ---------------------------------
@@ -28,4 +35,5 @@ This will simultaneously translate and rotate a molecule.
 `dir=[1,1,1]`    |  Translational directions
 `dp`             |  Translational displacement parameter
 `dprot`          |  Rotational displacement parameter (radians)
+`repeat=N`       |  Number of repeats per MC sweep. `N` equals $N_{molid}$ times.
 

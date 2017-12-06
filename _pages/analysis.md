@@ -39,4 +39,4 @@ json file that can be used to restore the state.
 `savestate`    |  Description
 -------------- | ---------------------------------------------------------
 `nstep=-1`     |  Interval between samples. If -1, save at end of simulation
-`file`         |  File to save; format detected by file extension: `pqr`, `aam`, `state`) 
+`file`         |  File to save; format detected by file extension: `pqr`, `aam`, `state`
