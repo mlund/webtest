@@ -26,7 +26,7 @@ moves:
 `dir=[1,1,1]`    |  Translational directions
 `dp`             |  Translational displacement parameter
 `dprot`          |  Rotational displacement parameter (radians)
-`repeat=N`       |  Number of repeats per MC sweep. `N` equals $N_{molid}$ times.
+`repeat=N`       |  Number of repeats per MC sweep. `N` equals $$N_{molid}$$ times.
 
 This will simultaneously translate and rotate a molecular group by the following operation
 
@@ -34,7 +34,9 @@ $$\textbf{r}^N_{trial} = \mbox{Rot}(\textbf{r}^N) + \delta$$
 
 where $$\mbox{Rot}$$ rotates `dprot`$$\cdot \left (\zeta-\frac{1}{2} \right )$$ radians around a random unit vector
 emanating from the mass center,
-$$\zeta$$ is a random number in the interval [0,1[, and
+$$\zeta$$ is a random number in the interval $$[0,1[$$, and
 $$\delta$$ is a random unit vector scaled by `dp`.
+Upon MC movement, the mean squared displacement
+will be tracked.
 
 

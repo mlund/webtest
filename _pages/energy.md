@@ -41,22 +41,19 @@ Below is a description of available pair-potentials and their configuration.
 
 ### Electrostatics
 
-This is a multipurpose pair potential that handles several variants of electrostatic
-pair-potentials. Beyond a spherical cutoff, $$R_c$$, the potential is zero while if
-below,
-
-$$ u_{ij} = \frac{q_i q_j }{ 4\pi\epsilon_0\epsilon_r r_{ij} }\mathcal{S}(q)$$
-
-where $$q=r/R_c$$, and $$\mathcal{S}(q)$$ is a splitting function defined below.
-The following keywords are _required_:
-
  `coulomb`   |  Description
  ----------- |  -------------------------------------------------
  `type`      |  Type of potential as defined above
  `cutoff`    |  Spherical cutoff after which the potential is zero
  `epsr`      |  Relative dielectric constant of the medium
 
-The splitting function is selected with `type` that can be any of the following:
+This is a multipurpose pair potential that handles several variants of electrostatic
+pair-potentials. Beyond a spherical cutoff, $$R_c$$, the potential is zero while if
+below,
+
+$$ u_{ij} = \frac{q_i q_j }{ 4\pi\epsilon_0\epsilon_r r_{ij} }\mathcal{S}(q)$$
+
+where $$q=r/R_c$$, and $$\mathcal{S}(q)$$ is a splitting function:
 
  `type`          | $$\mathcal{S}(q=r/R_c)$$               | Additional keywords | Comment
  --------------- | -------------------------------------- | ------------------- | ----------------------
@@ -70,7 +67,7 @@ The splitting function is selected with `type` that can be any of the following:
  `reactionfield` | $$ 1 + \frac{\epsilon_{RF}-\epsilon_{r}}{2\epsilon_{RF}+\epsilon_{r}} q^3  - 3\frac{\epsilon_{RF}}{2\epsilon_{RF}+\epsilon_{r}}q $$      | `epsrf`     | [doi](http://doi.org/dbs99w)
  `yukawa`        | $$ e^{-\kappa R_c q}-e^{-\kappa R_c}$$  | `debyelength`      | [ISBN](https://isbnsearch.org/isbn/0486652424)
 
-Note: $$\mathcal{S}(q)$$ is _splined_ whereby all types evaluate equally fast.
+Note: $$\mathcal{S}(q)$$ is _splined_ whereby all types evaluate at constant speed.
 {: .notice--info}
 
 Additional information regarding electrostatics:
@@ -79,6 +76,11 @@ Additional information regarding electrostatics:
  - [Generalized reaction field using ionic strength](http://dx.doi.org/10.1063/1.469273)
 
 ### Lennard-Jones
+
+`lennardjones` |  Description
+-------------  |  ------------------------------------------------
+`mixing=LB`    |  Mixing rule, `LB`
+`ljcustom`     |  Custom $$\epsilon$$ and $$\sigma$$ combinations
 
 The Lennard-Jones potential has the form:
 
@@ -92,11 +94,6 @@ $$\sigma_{ij} = \frac{\sigma_i+\sigma_j}{2}$$
 and
 
 $$\epsilon_{ij} = \sqrt{\epsilon_i \epsilon_j}$$
-
-`lennardjones` |  Description
--------------  |  ------------------------------------------------
-`mixing=LB`    |  Mixing rule, `LB`
-`ljcustom`     |  Custom $$\epsilon$$ and $$\sigma$$ combinations
 
 ## External Pressure
 
