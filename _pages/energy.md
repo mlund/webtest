@@ -26,6 +26,7 @@ energy:
 `energy`               |         | Potential(s)
 -----------------------|---------|--------------------------
 `nonbonded_coulomblj`  | &#8594; | `coulomb`+`lennardjones`
+`nonbonded_coulombhs`  | &#8594; | `coulomb`+`hardsphere`
 
 This term loops over pairs of atoms, $$i$$, and $$j$$, summing a given pair-wise additive potential, $$u_{ij}$$,
 
@@ -38,7 +39,7 @@ time_ and cannot be arbitrarily selected from input. It is straight forward to a
 
 Below is a description of possible pair-potentials and their configuration.
 
-### Electrostatics
+### Coulomb
 
  `coulomb`   |  Description
  ----------- |  -------------------------------------------------
@@ -93,6 +94,11 @@ $$\sigma_{ij} = \frac{\sigma_i+\sigma_j}{2}$$
 and
 
 $$\epsilon_{ij} = \sqrt{\epsilon_i \epsilon_j}$$
+
+### Hard-Sphere
+`hardsphere`
+
+The hard-sphere potential does not take any input. Radii are read from the atomlist at the beginning of the simulation.
 
 ## External Pressure
 
