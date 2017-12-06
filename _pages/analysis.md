@@ -30,3 +30,13 @@ Calculates the system energy; collect the average; and outputs to file.
 `nstep=0`        |  Interval between samples
 `file`           |  Output filename for energy vs. step output
 
+## Save State
+
+Saves the current configuration and potentially the system state to a file.
+If a `.state` file is specified, the complete system state is saved to a single
+json file that can be used to restore the state.
+
+`savestate`    |  Description
+-------------- | ---------------------------------------------------------
+`nstep=-1`     |  Interval between samples. If -1, save at end of simulation
+`file`         |  File to save; format detected by file extension: `pqr`, `aam`, `state`) 
