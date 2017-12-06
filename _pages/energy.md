@@ -23,10 +23,10 @@ energy:
 
 ## Nonbonded Interactions
 
-`energy`               |         | $$u_{ij}$$
------------------------|---------|--------------------------
-`nonbonded_coulomblj`  | &#8594; | `coulomb`+`lennardjones`
-`nonbonded_coulombhs`  | &#8594; | `coulomb`+`hardsphere`
+`energy`               | $$u_{ij}$$
+-----------------------|---------------------------
+`nonbonded_coulomblj`  | `coulomb`+`lennardjones`
+`nonbonded_coulombhs`  | `coulomb`+`hardsphere`
 
 This term loops over pairs of atoms, $$i$$, and $$j$$, summing a given pair-wise additive potential, $$u_{ij}$$,
 
