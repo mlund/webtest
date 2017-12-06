@@ -23,21 +23,20 @@ energy:
 
 ## Nonbonded Interactions
 
+`energy`               |         | Potential(s)
+-----------------------|---------|--------------------------
+`nonbonded_coulomblj`  | &#8594; | `coulomb`+`lennardjones`
+
 This term loops over pairs of atoms, $$i$$, and $$j$$, summing a given pair-wise additive potential, $$u_{ij}$$,
 
 $$ U_{NB} = \sum_i\sum_j u(\textbf{r}_{ij})$$
 
 **Note:** the pair-potential can be a combination of several potentials, but this must currently be defined at _compile
-time_ and cannot be arbitrarily selected from input. For a list of predefines combinations, see below.
+time_ and cannot be arbitrarily selected from input. It is straight forward to add more by editing the class
+`Energy::Hamiltonian` found in `src/energy.h` and then re-compile.
 {: .notice--info}
 
-Predefined pair-potential combinations:
-
-`energy`               |         | Potential(s)
------------------------|---------|--------------------------
-`nonbonded_coulomblj`  | &#8594; | `coulomb`+`lennardjones`
-
-Below is a description of available pair-potentials and their configuration.
+Below is a description of possible pair-potentials and their configuration.
 
 ### Electrostatics
 
@@ -79,7 +78,7 @@ Additional information regarding electrostatics:
 
 `lennardjones` |  Description
 -------------  |  ------------------------------------------------
-`mixing=LB`    |  Mixing rule, `LB`
+`mixing=LB`    |  Mixing rule. `LB`
 `ljcustom`     |  Custom $$\epsilon$$ and $$\sigma$$ combinations
 
 The Lennard-Jones potential has the form:
@@ -87,7 +86,7 @@ The Lennard-Jones potential has the form:
 $$ u_{ij} = 4\epsilon_{ij} \left (
     \left ( \frac{\sigma_{ij}} {r_{ij})} \right )^{12} - \left ( \frac{\sigma_{ij}}{r_{ij})}\right )^6 \right ) $$
 
-where the default mixing rule is Lorentz-Berthelot (LB):
+where the default mixing rule is Lorentz-Berthelot (`LB`):
 
 $$\sigma_{ij} = \frac{\sigma_i+\sigma_j}{2}$$
 
