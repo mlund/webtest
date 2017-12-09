@@ -50,3 +50,45 @@ json file that can be used to restore the state.
 `file`         |  Filename of output xtc file
 
 Save configurations to a Gromacs XTC trajectory file. 
+
+## Atomic Radial Distribution Function
+
+`atomrdf`      |  Description
+-------------- | ---------------------------------------------------------
+`nstep=0`      |  Interval between samples.
+`file`         |  Output file, two column
+`name1`        |  Atom name 1
+`name2`        |  Atom name 2
+`dr=0.1`       |  $$g(r)$$ resolution
+`dim=3`        |  Dimensions for volume element
+
+We sample the pair correlation function between atom id's _i_ and _j_,
+
+$$ g_{ij}(r) = \frac{ N_{ij}(r) }{ \sum_{r=0}^{\infty} N_{ij}(r) }
+\cdot \frac{ \langle V \rangle }{ V(r) } $$
+
+where $$N_{ij}(r)$$ is the number of observed pairs, accumulated over the
+entire ensemble, in the separation
+interval $$[r, r+dr]$$ and $$V(r)$$ is the corresponding volume element
+which depends on dimensionality:
+
+$$ V(r) $$                 | Dimensions (`dim`)
+:------------------------- | :----------------------------------------
+$$ 4\pi r^2 dr $$          | 3 (for particles in free space, default)
+$$ 2\pi r dr $$            | 2 (for particles confined on a plane)
+$$ 2\pi R sin(r/R) dr $$   | 2 (for particles confined on a 2D hypersphere surface, also needs input `Rhypersphere`)
+$$ dr $$                   | 1 (for particles confined on a line)
+
+## Molecular Radial Distribution Function
+
+`molrdf`       |  Description
+-------------- | ---------------------------------------------------------
+`nstep=0`      |  Interval between samples.
+`file`         |  Output file, two column
+`name1`        |  Molecule name 1
+`name2`        |  Molecule name 2
+`dr=0.1`       |  $$g(r)$$ resolution
+`dim=3`        |  Dimensions for volume element
+
+Same as `atomrdf` but for molecular mass-centers.
+
