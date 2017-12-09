@@ -43,19 +43,19 @@ Below is a description of possible pair-potentials and their configuration.
 
  `coulomb`   |  Description
  ----------- |  -------------------------------------------------
- `type`      |  Type of potential as defined above
- `cutoff`    |  Spherical cutoff after which the potential is zero
+ `type`      |  Coulomb type, see below
+ `cutoff`    |  Spherical cutoff, $$R_c$$ after which the potential is zero
  `epsr`      |  Relative dielectric constant of the medium
 
 This is a multipurpose pair potential that handles several variants of electrostatic
 pair-potentials. Beyond a spherical cutoff, $$R_c$$, the potential is zero while if
 below,
 
-$$ u_{ij} = \frac{q_i q_j }{ 4\pi\epsilon_0\epsilon_r r_{ij} }\mathcal{S}(\mathscr{q})$$
+$$ u_{ij} = \frac{e^2 z_i z_j }{ 4\pi\epsilon_0\epsilon_r r_{ij} }\mathcal{S}(q)$$
 
-where $$\mathscr{q}=r/R_c$$, and $$\mathcal{S}(\mathscr{q})$$ is a splitting function:
+where $$\mathcal{S}(q=r/R_c)$$ is a splitting function:
 
- `type`          | $$\mathcal{S}(\mathscr{q}=r/R_c)$$     | Additional keywords | Ref.
+ `type`          | $$\mathcal{S}(q)$$                     | Additional keywords | Ref.
  --------------- | -------------------------------------- | ------------------- | ----------------------
  `plain`         | $$ 1 $$                                |                     | [doi](http://doi.org/ctnnsj)
  `none`          | $$ 0 $$                                |                     | 
@@ -67,7 +67,7 @@ where $$\mathscr{q}=r/R_c$$, and $$\mathcal{S}(\mathscr{q})$$ is a splitting fun
  `reactionfield` | $$ 1 + \frac{\epsilon_{RF}-\epsilon_{r}}{2\epsilon_{RF}+\epsilon_{r}} q^3  - 3\frac{\epsilon_{RF}}{2\epsilon_{RF}+\epsilon_{r}}q $$      | `epsrf`     | [doi](http://doi.org/dbs99w)
  `yukawa`        | $$ e^{-\kappa R_c q}-e^{-\kappa R_c}$$  | `debyelength`      | [ISBN](https://isbnsearch.org/isbn/0486652424)
 
-**Note:** $$\mathcal{S}(\mathscr{q})$$ is _splined_ whereby all types evaluate at constant speed.
+**Note:** $$\mathcal{S}(q)$$ is _splined_ whereby all types evaluate at constant speed.
 {: .notice--info}
 
 Additional information regarding electrostatics:
