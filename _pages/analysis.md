@@ -41,4 +41,11 @@ Saves the current configuration and potentially the system state to a file.
 If a `.state` file is specified, the complete system state is saved to a single
 json file that can be used to restore the state.
 
+# XTC trajectory
 
+`xtcfile`      |  Description
+-------------- | ---------------------------------------------------------
+`nstep=0`      |  Interval between samples. If -1, save at end of simulation
+`file`         |  Filename of output xtc file
+
+Save configurations to a Gromacs XTC trajectory file. 
