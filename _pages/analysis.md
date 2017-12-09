@@ -14,6 +14,7 @@ at the top level input:
 ~~~ yaml
 analysis:
     - systemenergy: {file: energy.dat, nstep: 500}
+    - xtcfile: {file: traj.xtc, nstep: 1000}
     - ...
 ~~~
 
@@ -41,11 +42,11 @@ Saves the current configuration and potentially the system state to a file.
 If a `.state` file is specified, the complete system state is saved to a single
 json file that can be used to restore the state.
 
-# XTC trajectory
+## XTC trajectory
 
 `xtcfile`      |  Description
 -------------- | ---------------------------------------------------------
-`nstep=0`      |  Interval between samples. If -1, save at end of simulation
+`nstep=0`      |  Interval between samples.
 `file`         |  Filename of output xtc file
 
 Save configurations to a Gromacs XTC trajectory file. 
