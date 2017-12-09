@@ -13,8 +13,10 @@ at the top level input:
 
 ~~~ yaml
 analysis:
-    - systemenergy: {file: energy.dat, nstep: 500}
-    - xtcfile: {file: traj.xtc, nstep: 1000}
+    - systemenergy: { file: energy.dat, nstep: 500 }
+    - xtcfile: { file: traj.xtc, nstep: 1000 }
+    - molrdf: { name1: water, name2: water,
+                nstep: 100, dr: 0.1, dim: 3, file: rdf.dat }
     - ...
 ~~~
 
@@ -51,7 +53,9 @@ json file that can be used to restore the state.
 
 Save configurations to a Gromacs XTC trajectory file. 
 
-## Atomic Radial Distribution Function
+## Radial Distribution Function
+
+### Atomic
 
 `atomrdf`      |  Description
 -------------- | ---------------------------------------------------------
@@ -79,7 +83,7 @@ $$ 2\pi r dr $$            | 2 (for particles confined on a plane)
 $$ 2\pi R sin(r/R) dr $$   | 2 (for particles confined on a 2D hypersphere surface, also needs input `Rhypersphere`)
 $$ dr $$                   | 1 (for particles confined on a line)
 
-## Molecular Radial Distribution Function
+### Molecular
 
 `molrdf`       |  Description
 -------------- | ---------------------------------------------------------
