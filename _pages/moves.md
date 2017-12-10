@@ -54,6 +54,21 @@ the displacement parameters `dp` and `dprot` for the individual atoms are taken 
 atom properties defined in the [topology](../topology).
 
 **Note:**
-Atomic _rotation_ affects only anisotropic particles such as dipole, spherocylinders, quadrupoles etc.
+Atomic _rotation_ affects only anisotropic particles such as dipoles, spherocylinders, quadrupoles etc.
 {: .notice--info}
+
+## Volume Move
+
+`volume`         |  Description
+---------------- |  ---------------------------------
+`dV`             |  Volume displacement parameter
+`repeat=1`       |  Number of repeats per MC sweep.
+
+This will perform a volume move, scaling the container dimensions and:
+
+1. molecule mass center
+2. positions of free atoms (groups with `atomic==true`)
+
+This is typically used for the $$NPT$$ ensemble and for this an additional pressure
+term should be added to the Hamiltonian.
 
