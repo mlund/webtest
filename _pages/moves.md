@@ -39,4 +39,15 @@ $$\delta$$ is a random unit vector scaled by `dp`.
 Upon MC movement, the mean squared displacement
 will be tracked.
 
+## Atomic Translation and Rotation
+
+`transrot`       |  Description
+---------------- |  ---------------------------------
+`mol`            |  Molecule name to operate on
+`dir=[1,1,1]`    |  Translational directions
+
+As `moltransrot` but instead of the molecular mass center, this moves individual atoms in the
+group. The repeat is set to the number of atoms in the specified group and
+the displacement parameters `dp` and `dprot` for the individual atoms are taken from the
+_Atom Properties_ defined in the [topology](/topology/).
 
