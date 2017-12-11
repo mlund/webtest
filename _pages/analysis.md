@@ -24,14 +24,15 @@ analysis:
 sampling points. In addition all analysis provide output statistics of number of sample
 points and the relative time of the total run-time that was spent on the analysis.
 
-## System Energy
+## Density
 
-`systemenergy`   |  Description
+`density     `   |  Description
 ---------------- |  -------------------------------------------
 `nstep=0`        |  Interval between samples
-`file`           |  Output filename for energy vs. step output
 
-Calculates the system energy; collect the average; and outputs to file.
+This will calculate the average density of molecules and atoms in the simulation which
+may fluctuate due to isobaric and grand canonical moves. For atomic groups, densities
+of individual atom types are reported.
 
 ## Save State
 
@@ -43,6 +44,15 @@ Calculates the system energy; collect the average; and outputs to file.
 Saves the current configuration and potentially the system state to a file.
 If a `.state` file is specified, the complete system state is saved to a single
 json file that can be used to restore the state.
+
+## System Energy
+
+`systemenergy`   |  Description
+---------------- |  -------------------------------------------
+`nstep=0`        |  Interval between samples
+`file`           |  Output filename for energy vs. step output
+
+Calculates the system energy; collect the average; and outputs to file.
 
 ## XTC trajectory
 
