@@ -75,15 +75,15 @@ where $$\mathcal{S}(q=r/R_c)$$ is a splitting function:
  --------------- | -------------------------------------- | ------------------- | ----------------------
  `plain`         | $$ 1 $$                                |                     | [doi](http://doi.org/ctnnsj)
  `none`          | $$ 0 $$                                |                     | 
- `wolf`          | $$ \text{erfc}(\alpha R_c q)-erfc(\alpha R_c)q $$ | `alpha`         | [doi](http://doi.org/cfcxdk)
- `fennel`        | $$ \scriptstyle erfc(\alpha R_c q)-erfc(\alpha R_c)q + ( q -1 ) q \left( erfc(\alpha R_c) + \frac{2\alpha R_c}{\sqrt{\pi}} e^{-\alpha^2 R_c^2} \right) $$ | `alpha`| [doi](http://doi.org/bqgmv2)
- `yonezawa`      | $$ 1 + erfc(\alpha R_c)q + q^2 $$      | `alpha`             | [doi](http://dx.doi.org/10/j97)
+ `wolf`          | $$ \text{erfc}(\alpha R_c q)-\text{erfc}(\alpha R_c)q $$ | `alpha`         | [doi](http://doi.org/cfcxdk)
+ `fennel`        | $$ \scriptstyle \text{erfc}(\alpha R_c q)-\text{erfc}(\alpha R_c)q + ( q -1 ) q \left( \text{erfc}(\alpha R_c) + \frac{2\alpha R_c}{\sqrt{\pi}} e^{-\alpha^2 R_c^2} \right) $$ | `alpha`| [doi](http://doi.org/bqgmv2)
+ `yonezawa`      | $$ 1 + \text{erfc}(\alpha R_c)q + q^2 $$      | `alpha`             | [doi](http://dx.doi.org/10/j97)
  `fanourgakis`   | $$ 1-\frac{7}{4}q+\frac{21}{4}q^5-7q^6+\frac{5}{2}q^7$$|     | [doi](http://doi.org/f639q5)
  `qpotential`    | $$ \prod_{n=1}^{order}(1-q^n) $$       | `order=300`         | [ISBN](http://goo.gl/hynRTS) (Paper V)
  `reactionfield` | $$ 1 + \frac{\epsilon_{RF}-\epsilon_{r}}{2\epsilon_{RF}+\epsilon_{r}} q^3  - 3\frac{\epsilon_{RF}}{2\epsilon_{RF}+\epsilon_{r}}q $$      | `epsrf`     | [doi](http://doi.org/dbs99w)
  `yukawa`        | $$ e^{-\kappa R_c q}-e^{-\kappa R_c}$$  | `debyelength`      | [ISBN](https://isbnsearch.org/isbn/0486652424)
 
-**Note:** $$\mathcal{S}(q)$$ is _splined_ whereby all types evaluate at constant speed.
+**Note:** $$\mathcal{S}(q)$$ is _splined_ whereby all types evaluate at simular speed.
 {: .notice--info}
 
 Additional information regarding electrostatics:
