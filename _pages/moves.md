@@ -66,7 +66,7 @@ Atomic _rotation_ affects only anisotropic particles such as dipoles, spherocyli
 
 Performs a random walk in logarithmic volume,
 
-$$ V^{\prime} = e^{\ln V + \left (\zeta-\frac{1}{2} \right )\cdot\mbox{dV}} $$
+$$ V^{\prime} = e^{\ln V + \left (\zeta-\frac{1}{2} \right )\cdot dV } $$
 
 and scales:
 

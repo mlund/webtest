@@ -22,11 +22,11 @@ energy:
     - ...
 ~~~
 
-# External Pressure
+## External Pressure
 
 `isobaric`   | Description
 -------------|-------------------------------------------------------
-`P/x`        | External pressure in units of `x`=`mM`, `atm`, or `Pa`
+`P/x`        | External pressure in units of x which can be `mM`, `atm`, or `Pa`.
 
 This adds the following pressure term to the Hamiltonian, appropriate for MC moves
 in $$\ln V$$:
