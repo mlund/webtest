@@ -29,9 +29,9 @@ energy:
 `pressure`             | External pressure (mM)
 
 This adds the following pressure term to the Hamiltonian, appropriate for MC moves
-in $\ln V$:
+in $$\ln V$$:
 
-$$ U = PV - k_BT\left ( N + 1 \right ) \ln V
+$$ U = PV - k_BT\left ( N + 1 \right ) \ln V $$
 
 where $$N$$ is the total number of molecules and atomic species.
 
