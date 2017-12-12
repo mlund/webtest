@@ -15,11 +15,27 @@ The energy terms are given as a list to `energy` in the top level input:
 
 ~~~ yaml
 energy:
+    - isobaric: {pressure: 40}
     - nonbonded_coulomblj:
         lennardjones: {mixing: LB}
         coulomb: {type: plain, epsr: 80, cutoff: 10}
     - ...
 ~~~
+
+# External Pressure
+
+`isobaric`             | Description
+-----------------------|---------------------------
+`pressure`             | External pressure (mM)
+
+This adds the following pressure term to the Hamiltonian, appropriate for MC moves
+in $\ln V$:
+
+$$ U = PV - k_BT\left ( N + 1 \right ) \ln V
+
+where $$N$$ is the total number of molecules and atomic species.
+
+For more information see _Frenkel and Smith, 2nd Ed., chapter 5.4_.
 
 ## Nonbonded Interactions
 
@@ -99,8 +115,6 @@ $$\epsilon_{ij} = \sqrt{\epsilon_i \epsilon_j}$$
 `hardsphere`
 
 The hard-sphere potential does not take any input. Radii are read from the atomlist at the beginning of the simulation.
-
-## External Pressure
 
 ## Bonded
 

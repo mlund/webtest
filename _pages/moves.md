@@ -64,7 +64,11 @@ Atomic _rotation_ affects only anisotropic particles such as dipoles, spherocyli
 `dV`             |  Volume displacement parameter
 `repeat=1`       |  Number of repeats per MC sweep.
 
-This will perform a volume move, scaling the container dimensions and:
+This will perform a random walk in logarithmic volume move,
+
+$$ \ln V^{\prime} = \ln V + \left (\zeta-\frac{1}{2} \right )\cdot\mbox{dV} $$
+
+by scaling the container dimensions and:
 
 1. molecule mass center
 2. positions of free atoms (groups with `atomic==true`)
