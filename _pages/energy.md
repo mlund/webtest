@@ -15,7 +15,7 @@ The energy terms are given as a list to `energy` in the top level input:
 
 ~~~ yaml
 energy:
-    - isobaric: {pressure: 40}
+    - isobaric: {P/atm: 1}
     - nonbonded_coulomblj:
         lennardjones: {mixing: LB}
         coulomb: {type: plain, epsr: 80, cutoff: 10}
@@ -24,9 +24,9 @@ energy:
 
 # External Pressure
 
-`isobaric`             | Description
------------------------|---------------------------
-`pressure`             | External pressure (mM)
+`isobaric`   | Description
+-------------|-------------------------------------------------------
+`P/x`        | External pressure in units of `x`=`mM`, `atm`, or `Pa`
 
 This adds the following pressure term to the Hamiltonian, appropriate for MC moves
 in $$\ln V$$:
