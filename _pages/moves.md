@@ -64,15 +64,15 @@ Atomic _rotation_ affects only anisotropic particles such as dipoles, spherocyli
 `dV`             |  Volume displacement parameter
 `repeat=1`       |  Number of repeats per MC sweep.
 
-This will perform a random walk in logarithmic volume move,
+Performs a random walk in logarithmic volume,
 
-$$ \ln V^{\prime} = \ln V + \left (\zeta-\frac{1}{2} \right )\cdot\mbox{dV} $$
+$$ V^{\prime} = e^{\ln V + \left (\zeta-\frac{1}{2} \right )\cdot\mbox{dV}} $$
 
-by scaling the container dimensions and:
+and scales:
 
-1. molecule mass center
+1. molecular mass centers
 2. positions of free atoms (groups with `atomic==true`)
 
-This is typically used for the $$NPT$$ ensemble and for this an additional pressure
+by $$(V^{\prime}/V)^{1/3}$$.
+This is typically used for the $$NPT$$ ensemble, and for this an additional pressure
 term should be added to the Hamiltonian.
-
