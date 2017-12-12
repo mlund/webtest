@@ -26,7 +26,7 @@ energy:
 
 `isobaric`   | Description
 -------------|-------------------------------------------------------
-`P/x`        | External pressure in units of x which can be `mM`, `atm`, or `Pa`.
+`P/unit`     | External pressure where unit can be `mM`, `atm`, or `Pa`.
 
 This adds the following pressure term to the Hamiltonian, appropriate for MC moves
 in $$\ln V$$:
@@ -35,7 +35,7 @@ $$ U = PV - k_BT\left ( N + 1 \right ) \ln V $$
 
 where $$N$$ is the total number of molecules and atomic species.
 
-For more information see _Frenkel and Smith, 2nd Ed., chapter 5.4_.
+For more information see _Frenkel and Smith, 2nd Ed., Chapter 5.4_.
 
 ## Nonbonded Interactions
 
@@ -75,7 +75,7 @@ where $$\mathcal{S}(q=r/R_c)$$ is a splitting function:
  --------------- | -------------------------------------- | ------------------- | ----------------------
  `plain`         | $$ 1 $$                                |                     | [doi](http://doi.org/ctnnsj)
  `none`          | $$ 0 $$                                |                     | 
- `wolf`          | $$ erfc(\alpha R_c q)-erfc(\alpha R_c)q $$ | `alpha`         | [doi](http://doi.org/cfcxdk)
+ `wolf`          | $$ \text{erfc}(\alpha R_c q)-erfc(\alpha R_c)q $$ | `alpha`         | [doi](http://doi.org/cfcxdk)
  `fennel`        | $$ \scriptstyle erfc(\alpha R_c q)-erfc(\alpha R_c)q + ( q -1 ) q \left( erfc(\alpha R_c) + \frac{2\alpha R_c}{\sqrt{\pi}} e^{-\alpha^2 R_c^2} \right) $$ | `alpha`| [doi](http://doi.org/bqgmv2)
  `yonezawa`      | $$ 1 + erfc(\alpha R_c)q + q^2 $$      | `alpha`             | [doi](http://dx.doi.org/10/j97)
  `fanourgakis`   | $$ 1-\frac{7}{4}q+\frac{21}{4}q^5-7q^6+\frac{5}{2}q^7$$|     | [doi](http://doi.org/f639q5)
