@@ -2,9 +2,6 @@
 layout: splash
 toc: false
 permalink: /gallery/
-classes:
-  - landing
-  - dark-theme
 
 row1:
   - image_path: http://www1.lsbu.ac.uk/water/images/periodic_box.gif
@@ -28,5 +25,5 @@ row1:
 This is a display of systems Faunus can be used to simulate. Hover the mouse over an
 image to see more information and click to see the input file.
 
-{% include feature_row id="row1" %}
+{% include gallery id="row1" %}
 
