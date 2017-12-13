@@ -57,7 +57,7 @@ atom properties defined in the [topology](../topology).
 Atomic _rotation_ affects only anisotropic particles such as dipoles, spherocylinders, quadrupoles etc.
 {: .notice--info}
 
-## Volume Move
+## Volume Move <a name="volumemove"></a>
 
 `volume`         |  Description
 ---------------- |  ---------------------------------
@@ -74,5 +74,6 @@ and scales:
 2. positions of free atoms (groups with `atomic==true`)
 
 by $$(V^{\prime}/V)^{1/3}$$.
-This is typically used for the $$NPT$$ ensemble, and for this an additional pressure
-term should be added to the Hamiltonian.
+This is typically used for the $$NPT$$ ensemble, and for this an additional
+[pressure term](#isobaric) should be added to the Hamiltonian.
+

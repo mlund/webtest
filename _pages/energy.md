@@ -5,7 +5,7 @@ sidebar:
 ---
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-# Energy
+# Energy <a name="energy"></a>
 
 The system energy is described by a Hamiltonian where an arbitrary number of potential energy terms can be added,
 
@@ -22,22 +22,23 @@ energy:
     - ...
 ~~~
 
-## External Pressure
+## External Pressure <a name="isobaric"></a>
 
 `isobaric`   | Description
 -------------|-------------------------------------------------------
 `P/unit`     | External pressure where unit can be `mM`, `atm`, or `Pa`.
 
-This adds the following pressure term to the Hamiltonian, appropriate for MC moves
-in $$\ln V$$:
+This adds the following pressure term to the Hamiltonian, appropriate for
+[MC moves in $$\ln V$$](#volumemove):
 
 $$ U = PV - k_BT\left ( N + 1 \right ) \ln V $$
 
 where $$N$$ is the total number of molecules and atomic species.
 
 For more information see _Frenkel and Smith, 2nd Ed., Chapter 5.4_.
+<iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.se/books?id=5qTzldS9ROIC&lpg=PP1&dq=understanding%20molecular%20simulation%20frenkel&pg=PP1&output=embed" width=500 height=500></iframe>
 
-## Nonbonded Interactions
+## Nonbonded Interactions <a name="nonbonded"></a>
 
 `energy`               | $$u_{ij}$$
 -----------------------|---------------------------
@@ -83,7 +84,7 @@ where $$\mathcal{S}(q=r/R_c)$$ is a splitting function:
  `reactionfield` | $$ 1 + \frac{\epsilon_{RF}-\epsilon_{r}}{2\epsilon_{RF}+\epsilon_{r}} q^3  - 3\frac{\epsilon_{RF}}{2\epsilon_{RF}+\epsilon_{r}}q $$      | `epsrf`     | [doi](http://doi.org/dbs99w)
  `yukawa`        | $$ e^{-\kappa R_c q}-e^{-\kappa R_c}$$  | `debyelength`      | [ISBN](https://isbnsearch.org/isbn/0486652424)
 
-**Note:** $$\mathcal{S}(q)$$ is _splined_ whereby all types evaluate at simular speed.
+**Note:** Internally $$\mathcal{S}(q)$$ is _splined_ whereby all types evaluate at similar speed.
 {: .notice--info}
 
 Additional information regarding electrostatics:
