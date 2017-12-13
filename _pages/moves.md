@@ -75,5 +75,5 @@ and scales:
 
 by $$(V^{\prime}/V)^{1/3}$$.
 This is typically used for the $$NPT$$ ensemble, and for this an additional
-[pressure term](#isobaric) should be added to the Hamiltonian.
+pressure term should be added to the Hamiltonian.
 

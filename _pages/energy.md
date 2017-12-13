@@ -29,14 +29,13 @@ energy:
 `P/unit`     | External pressure where unit can be `mM`, `atm`, or `Pa`.
 
 This adds the following pressure term to the Hamiltonian, appropriate for
-[MC moves in $$\ln V$$](#volumemove):
+MC moves in $$\ln V$$:
 
 $$ U = PV - k_BT\left ( N + 1 \right ) \ln V $$
 
 where $$N$$ is the total number of molecules and atomic species.
 
 For more information see _Frenkel and Smith, 2nd Ed., Chapter 5.4_.
-<iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.se/books?id=5qTzldS9ROIC&lpg=PP1&dq=understanding%20molecular%20simulation%20frenkel&pg=PP1&output=embed" width=500 height=500></iframe>
 
 ## Nonbonded Interactions <a name="nonbonded"></a>
 
