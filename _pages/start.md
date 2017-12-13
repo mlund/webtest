@@ -11,25 +11,33 @@ sidebar:
 
 ### Requirements
 
-Faunus require `cmake` 3.6 or higher and a C++ compiler with good support for C++14.
+Faunus require,
+
+- CMake 3.6 or higher
+- A C++14 compiler
+- Python 3.6 or higher with `ruamel_yaml` or `yaml`
 
 ### Compiling
 
-Download the latest release and perform the following steps in a terminal:
+Download the latest release and perform the following steps in a terminal,
+which will automatically download a set of dependencies:
 
 ~~~ bash
 cd faunus
-cmake .      # see build options below
-make tests   # optional
+cmake .    # see build options below
 make faunus
 ~~~
 
-The build system automatically downloads a set of required dependencies.
+Should you have multiple compilers or python distributions you can be specific:
+
+~~~ bash
+CXX=clang++ cmake . -DPYTHON_INCLUDE_DIR=/opt/include/python3.6 -DPYTHON_LIBRARY=/opt/lib/libpython3.6.dylib
+~~~
 
 <a name="input-output"></a>
 ## Input/Output 
 
-Natively, Faunus input and output are in the [JSON format](http://json.org/example.html):
+Natively, Faunus input and output are [JSON formatted](http://json.org/example.html):
 
 ~~~ json
 {
@@ -43,7 +51,7 @@ Natively, Faunus input and output are in the [JSON format](http://json.org/examp
 
 However, via the small helper script `yason.py`, JSON can be converted to/from
 [YAML](http://www.yaml.org) which is less verbose, more readable and therefore
-used throughout this documentation:
+used throughout the documentation:
 
 ~~~ yaml
 atomlist:
@@ -52,7 +60,7 @@ atomlist:
 
 ### Post-Processing 
 
-For further processing of input and output, JSON (and YAML) can be read by
+For further processing of output or input, JSON (and YAML) can be read by
 most programming languages. For example:
 
 ~~~ python
@@ -62,20 +70,21 @@ with open('out.json') as f:
     print( d['atomlist'][0]["Na+"]["mw"] ) # --> 22.99
 ~~~
 
-##<a name="running"></a> Running Faunus
+<a name="running"></a>
+## Running Faunus
 
-By default, input is read from `stdin` and can either be JSON or,
-via `yason.py`, YAML:
+Input is read from `stdin` and can either be JSON or,
+via `yason.py`, also YAML:
 
 ~~~ bash
 faunus < input.json # from json
 yason.py minimal.yml | faunus # from yaml
 ~~~
 
-Output (json) can be conveniently converted to
-yaml for better readability:
+Output (JSON) can be conveniently converted to
+syntax highlighted YAML for better readability:
 
 ~~~ bash
-yason.py < out.json > out.yml
+yason.py --color out.json
 ~~~
 
