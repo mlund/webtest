@@ -7,7 +7,7 @@ sidebar:
 
 # Getting Started
 
-## Installtion
+## Installation
 
 ### Requirements
 
@@ -24,10 +24,12 @@ make tests   # optional
 make faunus
 ~~~
 
-<a name="input-output"></a>
-## Input & Output 
+The build system automatically downloads a set of required dependencies.
 
-Natively, input and output are in the [JSON format](http://json.org/example.html):
+<a name="input-output"></a>
+## Input/Output 
+
+Natively, Faunus input and output are in the [JSON format](http://json.org/example.html):
 
 ~~~ json
 {
@@ -39,16 +41,16 @@ Natively, input and output are in the [JSON format](http://json.org/example.html
 }
 ~~~
 
-However, via the small helper script `yason.py`, JSON can be converted into
+However, via the small helper script `yason.py`, JSON can be converted to/from
 [YAML](http://www.yaml.org) which is less verbose, more readable and therefore
-used throughout the documentation:
+used throughout this documentation:
 
 ~~~ yaml
 atomlist:
-    - Na+: { q:1.0, mw: 22.99 }
+    - Na+: { q: 1.0, mw: 22.99 }
 ~~~
 
-## Processing JSON 
+### Post-Processing 
 
 For further processing of input and output, JSON (and YAML) can be read by
 most programming languages. For example:
@@ -59,3 +61,21 @@ with open('out.json') as f:
     d = json.load(f) # --> dict
     print( d['atomlist'][0]["Na+"]["mw"] ) # --> 22.99
 ~~~
+
+##<a name="running"></a> Running Faunus
+
+By default, input is read from `stdin` and can either be JSON or,
+via `yason.py`, YAML:
+
+~~~ bash
+faunus < input.json # from json
+yason.py minimal.yml | faunus # from yaml
+~~~
+
+Output (json) can be conveniently converted to
+yaml for better readability:
+
+~~~ bash
+yason.py < out.json > out.yml
+~~~
+

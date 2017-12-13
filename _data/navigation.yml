@@ -17,7 +17,7 @@ docs:
        - title: Input and Output
          url: /start/#input-output
        - title: Running Simulations
-         url: /start/
+         url: /start/#running
  - title: Input Parameters
    children:
        - title: Topology
