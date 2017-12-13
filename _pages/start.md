@@ -11,24 +11,22 @@ sidebar:
 
 ### Requirements
 
-Faunus require,
-
 - CMake 3.6 or higher
-- A C++14 compiler
+- C++14 compiler (clang, gcc etc.)
 - Python 3.6 or higher with `ruamel_yaml` or `yaml`
 
 ### Compiling
 
-Download the latest release and perform the following steps in a terminal,
-which will automatically download a set of dependencies:
+Download the latest release and perform the following steps in a terminal.
+A set of dependencies will automatically be downloaded.
 
 ~~~ bash
 cd faunus
-cmake .    # see build options below
+cmake . [OPTIONS]
 make faunus
 ~~~
 
-Should you have multiple compilers or python distributions you can be specific:
+Should you have multiple compilers or python distributions, be specific:
 
 ~~~ bash
 CXX=clang++ cmake . -DPYTHON_INCLUDE_DIR=/opt/include/python3.6 -DPYTHON_LIBRARY=/opt/lib/libpython3.6.dylib

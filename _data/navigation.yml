@@ -4,8 +4,8 @@ main:
     url: /
   - title: "Docs"
     url: /docs
-  - title: "Github"
-    url: http://github.com/mlund/faunus
+  - title: "Gallery"
+    url: /gallery/
   - title: "Contact"
     url: http://github.com/mlund/faunus/issues
 
