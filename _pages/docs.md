@@ -8,19 +8,3 @@ sidebar:
 # User Guide
 
 Welcome to the Faunus user manual.
-
-this is a header
-
-This is a warning! Other warnings are "danger", "success", "info", "primary" or just `.notice`.
-{: .notice--warning}
-
-## Installation
-
-~~~ bash
-git clone http://github.com/mlund/faunus.git
-cd faunus
-~~~
-
-Some math $$\int_0^{\infty} dx$$.
-
-

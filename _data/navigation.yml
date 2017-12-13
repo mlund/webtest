@@ -12,16 +12,14 @@ main:
 docs:
  - title: Getting Started
    children:
-       - title: Requirements
-         url: /docs/requirements
-       - title: Installing
-         url: /docs/install
-       - title: Developer guide
-         url: /developer/
- - title: Simulation Input
+       - title: Installation
+         url: /start/
+       - title: Input and Output
+         url: /start/#input-output
+       - title: Running Simulations
+         url: /start/
+ - title: Input Parameters
    children:
-       - title: Input files
-         url: /input/
        - title: Topology
          url: /topology/
        - title: Energy
