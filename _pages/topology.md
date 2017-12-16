@@ -7,6 +7,19 @@ sidebar:
 
 # Topology
 
+The topology describes atomic and molecular properties and is given at the top-level input:
+
+~~~ yaml
+atomlist:
+    - Ow: { q: -0.8476, eps: 0.65, sigma: 3.165, mw: 15.9994}
+    - Hw: { q: 0.4238, mw: 1.008}
+    - Na: { q: 1.0, sigma: 4, eps: 0.05, dp: 0.4} 
+    - Cl: { q: -1.0, sigma: 4, eps: 0.05, dp: 0.4} 
+moleculelist:
+    - water: { Ninit: 257, Ninactive: 1, structure: water.xyz }
+    - salt:  { Ninit: 10, atoms: [Na,Cl], atomic: true }
+~~~
+
 ## Atom Properties
 
 `atomlist`    | Description
@@ -29,4 +42,16 @@ sidebar:
 `alphax`      | Excess polarizability in units of [Å$$^3$$]
 
 ## Molecule Properties
+
+`moleculelist`      | Description
+------------------- | --------------------------------------------------------
+`activity=0`        | Chemical activity for grand canonical MC [mol/l] 
+`atomic=false`      | True if collection of atomic species, salt etc.
+`atoms=[]`          | Array of atom names - required if `atomic==true`.
+`insdir=[1,1,1]`    | Insert directions are scaled by this
+`insoffset=[0,0,0]` | Shifts mass center after insertion
+`keeppos=false`     | Keep original positions of `structure`
+`Ninactive=0`       | Deactivates `Ninactive` of the inserted molecules
+`Ninit=0`           | How many molecules to insert
+`structure`         | Structure file (`pqr`|`aam`|`xyz`)
 

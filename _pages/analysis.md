@@ -15,14 +15,16 @@ at the top level input:
 analysis:
     - systemenergy: { file: energy.dat, nstep: 500 }
     - xtcfile: { file: traj.xtc, nstep: 1000 }
+    - widom: { molecule: water, ninsert: 20, nstep: 50 }
     - molrdf: { name1: water, name2: water,
                 nstep: 100, dr: 0.1, dim: 3, file: rdf.dat }
     - ...
 ~~~
 
-**All** analysis methods support the `nstep` keyword that defines the interval between
+**Note:** all analysis methods support the `nstep` keyword that defines the interval between
 sampling points. In addition all analysis provide output statistics of number of sample
-points and the relative time of the total run-time that was spent on the analysis.
+points, and the relative run-time spent on the analysis.
+{: .notice--info}
 
 ## Density
 
@@ -40,7 +42,7 @@ For atomic groups, densities of individual atom types are reported.
 
 `atomrdf`      |  Description
 -------------- | ---------------------------------------------------------
-`nstep=0`      |  Interval between samples.
+`nstep=0`      |  Interval between samples
 `file`         |  Output file, two column
 `name1`        |  Atom name 1
 `name2`        |  Atom name 2
@@ -68,12 +70,12 @@ $$ dr $$                   | 1 (for particles confined on a line)
 
 `molrdf`       |  Description
 -------------- | ---------------------------------------------------------
-`nstep=0`      |  Interval between samples.
 `file`         |  Output file, two column
 `name1`        |  Molecule name 1
 `name2`        |  Molecule name 2
 `dr=0.1`       |  $$g(r)$$ resolution
 `dim=3`        |  Dimensions for volume element
+`nstep=0`      |  Interval between samples.
 
 Same as `atomrdf` but for molecular mass-centers.
 
@@ -81,8 +83,8 @@ Same as `atomrdf` but for molecular mass-centers.
 
 `savestate`    |  Description
 -------------- | ---------------------------------------------------------
-`nstep=-1`     |  Interval between samples. If -1, save at end of simulation
 `file`         |  File to save; format detected by file extension: `pqr`, `aam`, `state`
+`nstep=-1`     |  Interval between samples. If -1, save at end of simulation
 
 Saves the current configuration and potentially the system state to a file.
 If a `.state` file is specified, the complete system state is saved to a single
@@ -92,8 +94,8 @@ json file that can be used to restore the state.
 
 `systemenergy`   |  Description
 ---------------- |  -------------------------------------------
-`nstep=0`        |  Interval between samples
 `file`           |  Output filename for energy vs. step output
+`nstep=0`        |  Interval between samples
 
 Calculates the system energy; collect the average; and outputs to file.
 
@@ -105,6 +107,7 @@ Calculates the system energy; collect the average; and outputs to file.
 `ninsert`     | Number of insertions per sample event
 `dir=[1,1,1]` | Inserting directions
 `absz=false`  | Apply `std::fabs` on all z-coordinates of inserted molecule
+`nstep=0`      |  Interval between samples
 
 This will insert a non-perturbing ghost molecule into
 the system and calculate a Widom average to measure
@@ -113,16 +116,16 @@ excess chemical potential:
 
 $$ \mu^{ex} = -k_BT \ln \langle e^{-\delta u/k_BT} \rangle_0 $$
 
-where $$delta u$$ is the energy change of the perturbation and the
+where $$\delta u$$ is the energy change of the perturbation and the
 average runs over the _unperturbed_ ensemble.
 
 **Note:**
-At least one _inactive_ `molecule` must be added to the simulation using the `inactive`
+At least one _inactive_ `molecule` must be added to the simulation using the `Ninactive`
 keyword when defining molecule types in the topology.
 {: .notice--info}
 
-The position and molecular rotation is random.
-For use with rod-like particles on surfaces, the `absz`
+Upon insertion, random positions and orientations are
+generated. For use with rod-like particles on surfaces, the `absz`
 keyword may be used to ensure orientations on only one
 half-sphere.
  
@@ -130,7 +133,7 @@ half-sphere.
 
 `xtcfile`      |  Description
 -------------- | ---------------------------------------------------------
-`nstep=0`      |  Interval between samples.
 `file`         |  Filename of output xtc file
+`nstep=0`      |  Interval between samples.
 
 Save configurations to a Gromacs XTC trajectory file. 
