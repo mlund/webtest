@@ -110,7 +110,7 @@ Calculates the system energy; collect the average; and outputs to file.
 `nstep=0`      |  Interval between samples
 
 This will insert a non-perturbing ghost molecule into
-the system and calculate a Widom average to measure
+the system and calculate a Widom average[^Widom63] to measure
 the free energy of the insertion process, _i.e._ the
 excess chemical potential:
 
@@ -128,6 +128,8 @@ Upon insertion, random positions and orientations are
 generated. For use with rod-like particles on surfaces, the `absz`
 keyword may be used to ensure orientations on only one
 half-sphere.
+
+[^Widom63]: [_Benjamin Widom: Some Topics in the Theory of Fluids_](https://doi.org/10.1063/1.1734110)
  
 ## XTC trajectory
 
