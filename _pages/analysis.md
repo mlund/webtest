@@ -97,6 +97,35 @@ json file that can be used to restore the state.
 
 Calculates the system energy; collect the average; and outputs to file.
 
+## Widom Insertion
+
+`widom`       | Description
+------------- | -----------------------------------------
+`molecule`    | Name of _inactive_ molecule to insert (atomic or molecular)
+`ninsert`     | Number of insertions per sample event
+`dir=[1,1,1]` | Inserting directions
+`absz=false`  | Apply `std::fabs` on all z-coordinates of inserted molecule
+
+This will insert a non-perturbing ghost molecule into
+the system and calculate a Widom average to measure
+the free energy of the insertion process, _i.e._ the
+excess chemical potential:
+
+$$ \mu^{ex} = -k_BT \ln \langle e^{-\delta u/k_BT} \rangle_0 $$
+
+where $$delta u$$ is the energy change of the perturbation and the
+average runs over the _unperturbed_ ensemble.
+
+**Note:**
+At least one _inactive_ `molecule` must be added to the simulation using the `inactive`
+keyword when defining molecule types in the topology.
+{: .notice--info}
+
+The position and molecular rotation is random.
+For use with rod-like particles on surfaces, the `absz`
+keyword may be used to ensure orientations on only one
+half-sphere.
+ 
 ## XTC trajectory
 
 `xtcfile`      |  Description

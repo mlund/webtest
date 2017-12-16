@@ -24,7 +24,7 @@ moves:
 
 `moltransrot`    |  Description
 ---------------- |  ---------------------------------
-`mol`            |  Molecule name to operate on
+`molecule`       |  Molecule name to operate on
 `dir=[1,1,1]`    |  Translational directions
 `dp`             |  Translational displacement parameter
 `dprot`          |  Rotational displacement parameter (radians)
@@ -45,7 +45,7 @@ will be tracked.
 
 `transrot`       |  Description
 ---------------- |  ---------------------------------
-`mol`            |  Molecule name to operate on
+`molecule`       |  Molecule name to operate on
 `dir=[1,1,1]`    |  Translational directions
 
 As `moltransrot` but instead of operating on the molecular mass center, this translates
