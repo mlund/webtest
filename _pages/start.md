@@ -17,7 +17,8 @@ sidebar:
 
 ### Compiling
 
-Download the latest release and perform the following steps in a terminal.
+Download the [latest release](https://github.com/mlund/faunus/releases/latest)
+and perform the following steps in a terminal.
 A set of dependencies will automatically be downloaded.
 
 ~~~ bash
@@ -38,11 +39,8 @@ CXX=clang++ cmake . -DPYTHON_INCLUDE_DIR=/opt/include/python3.6 -DPYTHON_LIBRARY
 Natively, Faunus input and output are [JSON formatted](http://json.org/example.html):
 
 ~~~ json
-{
-    "atomlist": [
-        {
-            "Na+": { "q": 1.0, "mw": 22.99 }
-        }
+{ "atomlist": [
+        { "Na+": { "q": 1.0, "mw": 22.99 } }
     ]
 }
 ~~~
@@ -58,8 +56,15 @@ atomlist:
 
 ### Post-Processing 
 
+Output (JSON) can be conveniently converted to
+syntax highlighted YAML for better readability:
+
+~~~ bash
+yason.py --color out.json
+~~~
+
 For further processing of output or input, JSON (and YAML) can be read by
-most programming languages. For example:
+most programming languages. For example in python:
 
 ~~~ python
 import json
@@ -77,12 +82,5 @@ via `yason.py`, also YAML:
 ~~~ bash
 faunus < input.json # from json
 yason.py minimal.yml | faunus # from yaml
-~~~
-
-Output (JSON) can be conveniently converted to
-syntax highlighted YAML for better readability:
-
-~~~ bash
-yason.py --color out.json
 ~~~
 

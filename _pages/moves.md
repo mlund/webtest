@@ -13,8 +13,9 @@ at the top level input. For example:
 
 ~~~ yaml
 moves:
-    - moltransrot: { mol: water, dp: 2.0, repeat: N
-                     dprot: 1.0, dir: [1,1,0] }
+    - moltransrot: {molecule: water, dp: 2.0, repeat: N
+                    dprot: 1.0, dir: [1,1,0]}
+    - volume: {dV: 0.01}
     - ...
 ~~~
 
