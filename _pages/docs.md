@@ -28,10 +28,11 @@ supporting us by crediting the following works:
 
 - Stenqvist et al.
   _Molecular Simulation 2013, 39:1233_
-  [![DOI](https://img.shields.io/badge/DOI-10%2Fnvn-orange.svg)](http://dx.doi.org/10/nvn)
 
+  [![DOI](https://img.shields.io/badge/DOI-10%2Fnvn-orange.svg)](http://dx.doi.org/10/nvn)
 - Lund, M., Persson, B., Trulsson, M.
   _Source Code Biol. Med., 2008, 3:1_
+
   [![DOI](https://img.shields.io/badge/DOI-10%2Fdfqgch-orange.svg)](http://dx.doi.org/10/dfqgch)
 
 
