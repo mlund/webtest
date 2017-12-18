@@ -53,5 +53,25 @@ moleculelist:
 `keeppos=false`     | Keep original positions of `structure`
 `Ninactive=0`       | Deactivates `Ninactive` of the inserted molecules
 `Ninit=0`           | How many molecules to insert
-`structure`         | Structure file (`pqr`|`aam`|`xyz`)
+`structure`         | Structure file (`.pqr|.aam|.xyz`)
+
+## Processes
+
+`processlist`   | Description
+--------------- | ------------------------------------------------
+`process`       | Process involving molecular groups (string)
+`K`/`pK`        | Molar equilibrium constant or minus log thereof
+
+The process describes a transformation of an arbitrary number of
+molecular reactants (left of =) into an arbitrary number of molecular
+products (right of =). A trailing tilde (~) denotes that the species is to
+be treated _implicitly_.
+
+In the following example we assume that the molecules `HA`, `H`, and `A` have
+been defined:
+
+~~~ yaml
+processlist:
+    - { process: "HA = H~ + A, pK=4.8 }
+~~~
 
