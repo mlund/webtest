@@ -7,4 +7,33 @@ sidebar:
 
 # User Guide
 
-Welcome to the Faunus user manual.
+Welcome to the Faunus user manual!
+
+---
+
+Faunus is a **team effort** with many fine contributors over the years.
+In chronological order: 
+
+Mikael Lund, Bjorn Persson, Martin Trulsson,
+Ondrej Marsalek, Christophe Labbez, Andre Teixeira,
+Anil Kurut, Chris Evers, Magnus Ullner,
+Robert Vacha, Axel Thuresson, Bjorn Stenqvist,
+Joao Henriques, Alexei Abrikossov, Giulio Tesei,
+Lukas Sukenik, Niels Kouwenhoven
+
+---
+
+If you find Faunus useful, or just love it, do consider
+supporting us by crediting the following works:
+
+- Stenqvist et al.
+  _Molecular Simulation 2013, 39:1233_
+
+  [![DOI](https://img.shields.io/badge/DOI-10%2Fnvn-orange.svg)](http://dx.doi.org/10/nvn)
+
+- Lund, M., Persson, B., Trulsson, M.
+  _Source Code Biol. Med., 2008, 3:1_
+
+  [![DOI](https://img.shields.io/badge/DOI-10%2Fdfqgch-orange.svg)](http://dx.doi.org/10/dfqgch)
+
+
