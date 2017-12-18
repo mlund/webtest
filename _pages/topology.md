@@ -47,7 +47,8 @@ moleculelist:
 ------------------- | --------------------------------------------------------
 `activity=0`        | Chemical activity for grand canonical MC [mol/l] 
 `atomic=false`      | True if collection of atomic species, salt etc.
-`atoms=[]`          | Array of atom names - required if `atomic==true`.
+`atoms=[]`          | Array of atom names - required if `atomic==true`
+`implicit=false`    | If this species is implicit in GCMC schemes
 `insdir=[1,1,1]`    | Insert directions are scaled by this
 `insoffset=[0,0,0]` | Shifts mass center after insertion
 `keeppos=false`     | Keep original positions of `structure`
@@ -62,16 +63,14 @@ moleculelist:
 `process`       | Process involving molecular groups (string)
 `K`/`pK`        | Molar equilibrium constant or minus log thereof
 
-The process describes a transformation of an arbitrary number of
-molecular reactants (left of =) into an arbitrary number of molecular
-products (right of =). A trailing tilde (~) denotes that the species is to
-be treated _implicitly_.
-
-In the following example we assume that the molecules `HA`, `H`, and `A` have
-been defined:
+The `process` string describes a transformation of molecular reactants (left of =)
+into molecular products (right of =). A trailing tilde (~) denotes that
+the species is to be treated _implicitly_.
+In the example below we assume that `HA`, `H`, and `A` have
+been defined in `moleculelist`:
 
 ~~~ yaml
 processlist:
-    - { process: "HA = H~ + A, pK=4.8 }
+    - { process: "HA = H~ + A", pK=4.8 }
 ~~~
 
