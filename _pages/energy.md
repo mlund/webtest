@@ -28,14 +28,14 @@ energy:
 -------------|-------------------------------------------------------
 `P/unit`     | External pressure where unit can be `mM`, `atm`, or `Pa`.
 
-This adds the following pressure term to the Hamiltonian, appropriate for
+This adds the following pressure term[^frenkel] to the Hamiltonian, appropriate for
 MC moves in $$\ln V$$:
 
 $$ U = PV - k_BT\left ( N + 1 \right ) \ln V $$
 
 where $$N$$ is the total number of molecules and atomic species.
 
-For more information see _Frenkel and Smith, 2nd Ed., Chapter 5.4_.
+[^frenkel]: _Frenkel and Smith, 2nd Ed., Chapter 5.4_.
 
 ## Nonbonded Interactions <a name="nonbonded"></a>
 
@@ -105,11 +105,8 @@ $$ u_{ij} = 4\epsilon_{ij} \left (
 
 where the default mixing rule is Lorentz-Berthelot (`LB`):
 
-$$\sigma_{ij} = \frac{\sigma_i+\sigma_j}{2}$$
-
-and
-
-$$\epsilon_{ij} = \sqrt{\epsilon_i \epsilon_j}$$
+$$\sigma_{ij} = \frac{\sigma_i+\sigma_j}{2} \quad \textrm{and} \quad
+\epsilon_{ij} = \sqrt{\epsilon_i \epsilon_j}$$
 
 ### Hard-Sphere
 `hardsphere`

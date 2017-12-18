@@ -8,23 +8,17 @@ header:
   cta_label: "Download"
   cta_url: "https://github.com/mlund/faunus/releases/latest"
   caption: # "Photo credit: [**Unsplash**](https://unsplash.com)"
-excerpt: "A C++ framework for Metropolis Monte Carlo simulations of molecular systems"
+excerpt: "A Framework for Metropolis Monte Carlo simulations of molecular systems"
 ---
 
-# Below is a brief overview of features:
+# Features:
 
 - Canonical, Grand Canonical, Isobaric-Isothermal statistical mechanical ensembles
-- General hamiltonian **parallel tempering** (temperature, screening length, bonds etc.)
-- **Anisotropic** atoms (multipoles, sphero-cylinders, capped particles)
+- General hamiltonian parallel tempering (temperature, screening length, bonds etc.)
+- Anisotropic atoms (multipoles, sphero-cylinders, capped particles)
 - Ion titration moves (pKa prediction, Hofmeister effects etc.)
-- Highy modular
+- Modular and very flexible
 - Free and open source (**GPL**)
-
-# Detailed information and support:
-
-- Support: <http://github.com/mlund/faunus/issues>
-- Source code: <http://github.com/mlund/faunus>
-- Code documentation: <https://codedocs.xyz/mlund/faunus>
 
 # Videos
 

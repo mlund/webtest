@@ -13,11 +13,11 @@ at the top level input:
 
 ~~~ yaml
 analysis:
-    - systemenergy: { file: energy.dat, nstep: 500 }
-    - xtcfile: { file: traj.xtc, nstep: 1000 }
-    - widom: { molecule: water, ninsert: 20, nstep: 50 }
-    - molrdf: { name1: water, name2: water,
-                nstep: 100, dr: 0.1, dim: 3, file: rdf.dat }
+    - systemenergy: {file: energy.dat, nstep: 500}
+    - xtcfile: {file: traj.xtc, nstep: 1000}
+    - widom:  {molecule: water, ninsert: 20, nstep: 50}
+    - molrdf: {name1: water, name2: water, nstep: 100}
+               dr: 0.1, dim: 3, file: rdf.dat}
     - ...
 ~~~
 
@@ -32,8 +32,8 @@ points, and the relative run-time spent on the analysis.
 ---------------- |  -------------------------------------------
 `nstep=0`        |  Interval between samples
 
-This will calculate the average density, $$\langle N/V \rangle_i$$ of molecules and atoms
-which fluctuate in _e.g._ the isobaric ($$NPT$$) ensemble or the Grand Canonical ensemble ($$\mu VT$$).
+This will calculate the average density, $$\langle N_i/V \rangle$$ of molecules and atoms
+which fluctuate in _e.g._ the isobaric ensemble or the Grand Canonical ensemble.
 For atomic groups, densities of individual atom types are reported.
 
 ## Radial Distribution Function

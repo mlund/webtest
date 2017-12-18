@@ -11,13 +11,13 @@ The topology describes atomic and molecular properties and is given at the top-l
 
 ~~~ yaml
 atomlist:
-    - Ow: { q: -0.8476, eps: 0.65, sigma: 3.165, mw: 15.9994}
-    - Hw: { q: 0.4238, mw: 1.008}
-    - Na: { q: 1.0, sigma: 4, eps: 0.05, dp: 0.4} 
-    - Cl: { q: -1.0, sigma: 4, eps: 0.05, dp: 0.4} 
+    - Hw: {q:  0.4238}
+    - Ow: {q: -0.8476, eps: 0.65, sigma: 3.165, mw: 16}
+    - Na: {q:  1.0, sigma: 4, eps: 0.05, dp: 0.4} 
+    - Cl: {q: -1.0, sigma: 4, eps: 0.05, dp: 0.4} 
 moleculelist:
-    - water: { Ninit: 257, Ninactive: 1, structure: water.xyz }
-    - salt:  { Ninit: 10, atoms: [Na,Cl], atomic: true }
+    - water: {Ninit: 256, structure: water.xyz}
+    - salt:  {Ninit: 10, atoms: [Na,Cl], atomic: true}
 ~~~
 
 ## Atom Properties
