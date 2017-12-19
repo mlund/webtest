@@ -1,7 +1,9 @@
 ---
 permalink: /docs/
 sidebar:
-    nav: "docs"
+    - title: "Another Title"
+      text: "More text here."
+    - nav: "docs"
 ---
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 [Edit this page]({{site.github.repository_url}}/blob/master/{{page.path}}){: .btn .btn--success .btn--small}
