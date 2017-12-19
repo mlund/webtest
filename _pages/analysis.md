@@ -106,17 +106,16 @@ Calculates the system energy; collect the average; and outputs to file.
 `dV`            | Volume perturbation (angstrom cubed)
 `nstep`         | Interval between samples
 
-Performs a virtual volume move by scaling the box volume to $$V+\Delta V$$ along with
+Performs a [virtual volume move](http://dx.doi.org/10.1063/1.472721) by
+scaling the box volume to $$V+\Delta V$$ along with
 molecular mass centers and atomic positions. The excess pressure is evatuated
-as a Widom perturbation:
+as a Widom average:
 
-$$ P^{ex} = -\frac{ k_BT \ln \langle
-    e^{-\delta u / k_BT} \rangle_{NVT} }{ \Delta V } $$
+$$ P^{ex} = -k_BT \ln \langle
+    e^{-\delta u / k_BT} \rangle_{NVT} / \Delta V $$
 
-Further information:
-
-- http://dx.doi.org/10.1063/1.472721 (basics)
-- http://dx.doi.org/10.1063/1.4767375 (pressure tensor, surface tension etc.)
+For pressure tensors and surface tension see more
+[here](http://dx.doi.org/10.1063/1.4767375).
  
 ## Widom Insertion
 
