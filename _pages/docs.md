@@ -23,6 +23,8 @@ Lukas Sukenik, Niels Kouwenhoven_
 
 ---
 
+<a href="{{site.github.repository_url}}/blob/{{page.path}}">Edit this page</a>
+
 <a href="{{site.github.repository_url}}/blob/gh-pages/{{page.path}}">Edit this page</a>
 
 <a href="{{site.github.repository_url}}{{page.path}}">Edit this page</a>
