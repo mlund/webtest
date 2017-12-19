@@ -99,6 +99,25 @@ json file that can be used to restore the state.
 
 Calculates the system energy; collect the average; and outputs to file.
 
+## Virtual Volume Move
+
+`virtualvolume` | Description
+--------------- | -------------------------------------
+`dV`            | Volume perturbation (angstrom cubed)
+`nstep`         | Interval between samples
+
+Performs a virtual volume move by scaling the box volume to $V+\Delta V$ along with
+molecular mass centers and atomic positions. The excess pressure is evatuated
+as a Widom perturbation:
+
+$$ P^{ex} = -\frac{ k_BT \ln \langle
+    e^{-\delta u / k_BT} \rangle_{NVT} }{ \Delta V } $$
+
+Further information:
+
+- http://dx.doi.org/10.1063/1.472721 (basics)
+- http://dx.doi.org/10.1063/1.4767375 (pressure tensor, surface tension etc.)
+ 
 ## Widom Insertion
 
 `widom`       | Description
