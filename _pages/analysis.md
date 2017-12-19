@@ -106,7 +106,7 @@ Calculates the system energy; collect the average; and outputs to file.
 `dV`            | Volume perturbation (angstrom cubed)
 `nstep`         | Interval between samples
 
-Performs a virtual volume move by scaling the box volume to $V+\Delta V$ along with
+Performs a virtual volume move by scaling the box volume to $$V+\Delta V$$ along with
 molecular mass centers and atomic positions. The excess pressure is evatuated
 as a Widom perturbation:
 
