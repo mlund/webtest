@@ -23,7 +23,7 @@ Lukas Sukenik, Niels Kouwenhoven_
 
 ---
 
-<a href="{{site.github.repository_url}}/blob/{{page.path}}">Edit this page</a>
+<a href="{{site.github.repository_url}}/blob/master/{{page.path}}">Edit this page</a>
 
 <a href="{{site.github.repository_url}}/blob/gh-pages/{{page.path}}">Edit this page</a>
 
@@ -32,6 +32,8 @@ Lukas Sukenik, Niels Kouwenhoven_
 <a href="{{ site.github.repository_url }}/tree/master/{{ page.relative_path }}">Edit</a>
 
 <a href="http://prose.io/#{{site.repo}}/edit/{{site.branch}}/{{ page.path }}">Edit</a>
+
+https://github.com/mlund/webtest/blob/master/_pages/docs.md
 
 
 
