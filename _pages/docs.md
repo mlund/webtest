@@ -4,6 +4,7 @@ sidebar:
     nav: "docs"
 ---
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+[Edit this page]({{site.github.repository_url}}/blob/master/{{page.path}}){: .btn .btn--success}
 
 # User Guide
 
@@ -25,17 +26,7 @@ Lukas Sukenik, Niels Kouwenhoven_
 
 <a href="{{site.github.repository_url}}/blob/master/{{page.path}}">Edit this page</a>
 
-<a href="{{site.github.repository_url}}/blob/gh-pages/{{page.path}}">Edit this page</a>
-
-<a href="{{site.github.repository_url}}{{page.path}}">Edit this page</a>
-
-<a href="{{ site.github.repository_url }}/tree/master/{{ page.relative_path }}">Edit</a>
-
-<a href="http://prose.io/#{{site.repo}}/edit/{{site.branch}}/{{ page.path }}">Edit</a>
-
-https://github.com/mlund/webtest/blob/master/_pages/docs.md
-
-
+[Edit this page]({{site.github.repository_url}}/blob/master/{{page.path}}){: .btn .btn--success}
 
 
 ---
