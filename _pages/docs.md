@@ -23,6 +23,19 @@ Lukas Sukenik, Niels Kouwenhoven_
 
 ---
 
+<a href="{{site.github.repository_url}}/blob/gh-pages/{{page.path}}">Edit this page</a>
+
+<a href="{{site.github.repository_url}}{{page.path}}">Edit this page</a>
+
+<a href="{{ site.github.repository_url }}/tree/master/{{ page.relative_path }}">Edit</a>
+
+<a href="http://prose.io/#{{site.repo}}/edit/{{site.branch}}/{{ page.path }}">Edit</a>
+
+
+
+
+---
+
 Should you find Faunus useful, do consider
 supporting us by crediting the following works:
 
