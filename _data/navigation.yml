@@ -10,6 +10,7 @@ main:
     url: http://github.com/mlund/faunus/issues
 
 docs:
+ - title: "_edit_"
  - title: Getting Started
    children:
        - title: Installation
