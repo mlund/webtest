@@ -13,6 +13,7 @@ excerpt: "A Framework for Metropolis Monte Carlo simulations of molecular system
 [![GitHub release](https://img.shields.io/github/release/mlund/faunus.svg)](https://github.com/mlund/faunus/releases/latest)
 [![DOI](https://img.shields.io/badge/DOI-10%2Fnvn-orange.svg)](http://dx.doi.org/10/nvn)
 [![DOI](https://img.shields.io/badge/DOI-10%2Fdfqgch-orange.svg)](http://dx.doi.org/10/dfqgch)
+[![DOI](https://img.shields.io/badge/Edit-github-lightgrey.svg?style=social)](http://)
 
 # Features:
 
