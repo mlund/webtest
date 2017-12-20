@@ -1,5 +1,5 @@
 ---
-title: "Welcome to Fau&#951;us"
+title: "Welcome to Faunus"
 layout: splash
 header:
   overlay_color: "#000"
@@ -10,6 +10,7 @@ header:
   caption: # "Photo credit: [**Unsplash**](https://unsplash.com)"
 excerpt: "A Framework for Metropolis Monte Carlo simulations of molecular systems"
 ---
+[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)](https://github.com/mlund/faunus/releases/latest)
 
 # Features:
 
