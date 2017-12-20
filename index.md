@@ -10,7 +10,7 @@ header:
   caption: # "Photo credit: [**Unsplash**](https://unsplash.com)"
 excerpt: "A Framework for Metropolis Monte Carlo simulations of molecular systems"
 ---
-[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)](https://github.com/mlund/faunus/releases/latest)
+[![GitHub release](https://img.shields.io/github/release/mlund/faunus.svg)](https://github.com/mlund/faunus/releases/latest)
 
 # Features:
 
