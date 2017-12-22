@@ -13,8 +13,8 @@ The topology describes atomic and molecular properties and is given at the top-l
 atomlist:
     - Hw: {q:  0.4238}
     - Ow: {q: -0.8476, eps: 0.65, sigma: 3.165, mw: 16}
-    - Na: {q:  1.0, sigma: 4, eps: 0.05, dp: 0.4} 
-    - Cl: {q: -1.0, sigma: 4, eps: 0.05, dp: 0.4} 
+    - Na: {q:  1.0, sigma: 4, eps: 0.05, dp: 0.4}
+    - Cl: {q: -1.0, sigma: 4, eps: 0.05, dp: 0.4}
 moleculelist:
     - water: {Ninit: 256, structure: water.xyz}
     - salt:  {Ninit: 10, atoms: [Na,Cl], atomic: true}
@@ -26,9 +26,9 @@ moleculelist:
 ------------- | --------------------------------------------------------
 `activity=0`  | Chemical activity for grand canonical MC [mol/l]
 `alpha`       | Polarizability in units of [$$4\pi\epsilon_0$$]
-`dp=0`        | Translational displacement parameter [Å] 
+`dp=0`        | Translational displacement parameter [Å]
 `dprot=0`     | Rotational displacement parameter [degrees] (will be converted to radians)
-`eps=0`       | Epsilon energy scaling commonly used for Lennard-Jones interactions etc. [kJ/mol] 
+`eps=0`       | Epsilon energy scaling commonly used for Lennard-Jones interactions etc. [kJ/mol]
 `hydrophobic=false` | Is the particle hydrophobic? [`true`/`false`]
 `mu=[0,0,0]`  | Dipole moment vector [Debye]
 `Ninit=0`     | Initial number of atoms (used by `MoleculeData` to insert atoms
@@ -45,7 +45,7 @@ moleculelist:
 
 `moleculelist`      | Description
 ------------------- | --------------------------------------------------------
-`activity=0`        | Chemical activity for grand canonical MC [mol/l] 
+`activity=0`        | Chemical activity for grand canonical MC [mol/l]
 `atomic=false`      | True if collection of atomic species, salt etc.
 `atoms=[]`          | Array of atom names - required if `atomic==true`
 `implicit=false`    | If this species is implicit in GCMC schemes
@@ -55,6 +55,16 @@ moleculelist:
 `Ninactive=0`       | Deactivates `Ninactive` of the inserted molecules
 `Ninit=0`           | How many molecules to insert
 `structure`         | Structure file (`.pqr|.aam|.xyz`)
+`bondlist`          | List of _internal_ bonds (harmonic, dihedrals etc.)
+
+
+## Bonded Inteactions
+
+Bond type       | Description
+:-------------- | -------------------------------------------
+`harmonic`      | Harmonic bond
+--------------: | -------------------------------------------
+`k`             | Harmonic force constant (kJ/mol/Å2)
 
 ## Processes
 
@@ -73,4 +83,3 @@ been defined in `moleculelist`:
 processlist:
     - { process: "HA = H~ + A", pK=4.8 }
 ~~~
-
