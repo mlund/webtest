@@ -97,7 +97,11 @@ json file that can be used to restore the state.
 `file`           |  Output filename for energy vs. step output
 `nstep=0`        |  Interval between samples
 
-Calculates the system energy; collect the average; and outputs to file.
+Calculates the energy contributions from all terms in the Hamiltonian and
+outputs to a file.
+If filename ends with `.csv`, a comma separated value file will be saved,
+otherwise a simple space separeted file with a single hash commented header line.
+All units in $$k_BT$$.
 
 ## Virtual Volume Move
 
