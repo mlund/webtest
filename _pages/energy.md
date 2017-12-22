@@ -113,5 +113,41 @@ $$\sigma_{ij} = \frac{\sigma_i+\sigma_j}{2} \quad \textrm{and} \quad
 
 The hard-sphere potential does not take any input. Radii are read from the atomlist at the beginning of the simulation.
 
-## Bonded
+## Bonded Interactions
+
+Bonds and angular potentials are added via the keyword `bondlist` either directly
+in a molecule definition (topology) or in `energy`/`bondlist`:
+
+~~~ yaml
+moleculelist:
+    - water:
+        structure: water.xyz
+        bondlist: # index relative to molecule
+            - harmonic: { index=[0,1], k=100, req=1.0 }  
+            - harmonic: { index=[0,2], k=100, req=1.0 }
+energy:
+    - bonded:
+        bondlist: # absolute index
+           - harmonic: { index=[56,921], k=10, req=15 }
+~~~
+
+The following is a list of supported potential types:
+
+`harmonic`     | Harmonic bond
+-------------- | -------------------------------------------
+`k`            | Harmonic spring constant (kJ/mol/Å$$^2$$)
+`req`          | Equilibrium distance (Å)
+`index`        | array with _exactly two_ index (relative to molecule)
+
+$$ u = \frac{1}{2}k(r_{12}-r_{eq})^2 $$
+
+`fene`         | [Finite Extensible Nonlinear Elastic Potential](http://dx.doi.org/10.1103/PhysRevE.59.4248)
+-------------- | -------------------------------------------
+`k`            | Bond stiffness (kJ/mol/Å$$^2$$)
+`rmax`         | Maximum separation, $$r_m$$ (Å)
+`index`        | array with _exactly two_ index (relative to molecule)
+
+$$ u = -\frac{1}{2}k_BT k r_m^2 \ln \left [ 1-(r/r_m)^2 \right ] $$
+
+for $$r < r_m$$; infinity otherwise.
 
