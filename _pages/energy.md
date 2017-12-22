@@ -108,10 +108,10 @@ where the default mixing rule is Lorentz-Berthelot (`LB`):
 $$\sigma_{ij} = \frac{\sigma_i+\sigma_j}{2} \quad \textrm{and} \quad
 \epsilon_{ij} = \sqrt{\epsilon_i \epsilon_j}$$
 
-### Hard-Sphere
+### Hard Sphere
 `hardsphere`
 
-The hard-sphere potential does not take any input. Radii are read from the atomlist at the beginning of the simulation.
+The hard sphere potential does not take any input. Radii are read from the atomlist at the beginning of the simulation.
 
 ## Bonded Interactions
 
@@ -132,9 +132,9 @@ energy:
            - harmonic: { index=[56,921], k=10, req=15 }
 ~~~
 
-The following is a list of supported potential types:
+Bonded potential types:
 
-## Harmonic
+### Harmonic
 
 `harmonic`     | Harmonic bond
 -------------- | -------------------------------------------
@@ -142,9 +142,9 @@ The following is a list of supported potential types:
 `req`          | Equilibrium distance (Å)
 `index`        | array with _exactly two_ index (relative to molecule)
 
-$$ u = \frac{1}{2}k(r_{12}-r_{eq})^2 $$
+$$ u(r) = \frac{1}{2}k(r-r_{eq})^2 $$
 
-## Finite Extensible Nonlinear Elastic
+### Finite Extensible Nonlinear Elastic
 
 `fene`         | [Finite Extensible Nonlinear Elastic Potential](http://dx.doi.org/10.1103/PhysRevE.59.4248)
 -------------- | -------------------------------------------
@@ -152,7 +152,7 @@ $$ u = \frac{1}{2}k(r_{12}-r_{eq})^2 $$
 `rmax`         | Maximum separation, $$r_m$$ (Å)
 `index`        | array with _exactly two_ index (relative to molecule)
 
-$$ u = -\frac{1}{2}k_BT k r_m^2 \ln \left [ 1-(r/r_m)^2 \right ] $$
+$$ u(r) = -\frac{1}{2} k r_m^2 \ln \left [ 1-(r/r_m)^2 \right ] $$
 
 for $$r < r_m$$; infinity otherwise.
 
