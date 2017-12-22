@@ -60,11 +60,41 @@ moleculelist:
 
 ## Bonded Inteactions
 
-Bond type       | Description
-:-------------- | -------------------------------------------
+Bonds and angular potentials are added via the keyword `bondlist` either directly
+in a molecule definition (for internal bonds) or in the `energy`/`bonded` section:
+
+~~~ yaml
+moleculelist:
+    - water:
+        structure: water.xyz
+        bondlist:
+            - harmonic: { index=[0,1], k=100, req=1.0 }  
+            - harmonic: { index=[0,2], k=100, req=1.0 }  
+~~~
+
+The following is a list of supported potential types:
+
 `harmonic`      | Harmonic bond
 --------------: | -------------------------------------------
-`k`             | Harmonic force constant (kJ/mol/Å2)
+`k`             | Harmonic spring constant (kJ/mol/Å$$^2$$)
+`req`           | Equilibrium distance (Å)
+`index`         | array with _exactly two_ index (relative to molecule)
+
+Harmonic potential,
+
+$$ u = \frac{1}{2}k(r_{12}-r_{eq})^2 $$
+
+`fene`          | FENE potential
+--------------: | -------------------------------------------
+`k`             | Bond stiffness ($$k_BT$$)
+`rmax`          | Maximum separation, $$r_m$$ (Å)
+`index`         | array with _exactly two_ index (relative to molecule)
+
+[Finite Extensible Nonlinear Elastic Potential](http://dx.doi.org/10.1103/PhysRevE.59.4248):
+
+$$ u = -k_BT \frac{k r_m^2}{2}\ln \left [ 1-(r/r_m)^2 \right ] $$
+
+for $$r < r_m$$; infinity otherwise.
 
 ## Processes
 
