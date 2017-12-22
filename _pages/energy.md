@@ -116,7 +116,8 @@ The hard-sphere potential does not take any input. Radii are read from the atoml
 ## Bonded Interactions
 
 Bonds and angular potentials are added via the keyword `bondlist` either directly
-in a molecule definition (topology) or in `energy`/`bondlist`:
+in a molecule definition (topology) or in energy/bonded where the latter can be
+used to add inter-molecular bonds:
 
 ~~~ yaml
 moleculelist:
@@ -133,6 +134,8 @@ energy:
 
 The following is a list of supported potential types:
 
+## Harmonic
+
 `harmonic`     | Harmonic bond
 -------------- | -------------------------------------------
 `k`            | Harmonic spring constant (kJ/mol/Å$$^2$$)
@@ -140,6 +143,8 @@ The following is a list of supported potential types:
 `index`        | array with _exactly two_ index (relative to molecule)
 
 $$ u = \frac{1}{2}k(r_{12}-r_{eq})^2 $$
+
+## Finite Extensible Nonlinear Elastic
 
 `fene`         | [Finite Extensible Nonlinear Elastic Potential](http://dx.doi.org/10.1103/PhysRevE.59.4248)
 -------------- | -------------------------------------------
