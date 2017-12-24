@@ -3,7 +3,7 @@ title: "Hoth System Simulator"
 layout: splash
 header:
   overlay_color: "#000"
-  overlay_filter: "0.9"
+  overlay_filter: "0.6"
   #overlay_image: http://www.worldtechtoday.com/wp-content/uploads/2016/04/bigstock-Water-Molecules-984772.jpg
   overlay_image: https://www.wired.com/images_blogs/dangerroom/2013/02/hoth-atat.jpg
   cta_label: "Download"
