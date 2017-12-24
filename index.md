@@ -14,13 +14,13 @@ excerpt: "_...the Monte Carlo code you're looking for_"
 feature_row:
   - image_path: https://www.dropbox.com/s/bp8tk5xilszliod/flexibility.jpg?raw=1
     title: "Extreme Flexibility"
-    excerpt: "Arbitrary Hamiltonians and Statistical Mechanical Ensembles"
+    excerpt: "Arbitrary Hamiltonians and Statistical Mechanical Ensembles through a modern, modular C++ framework that can easily be extended."
   - image_path: https://www.dropbox.com/s/djqi4dfhl4ee365/deathstar.png?raw=1
-    title: "Anisotropic Atoms"
-    excerpt: "Sphero-cylinders, Death Star Particles, Dipoles, Quadrupoles"
+    title: "Anisotropic Particles"
+    excerpt: "Spheres, Sphero-cylinders, Death Star Particles, Dipoles, Quadrupoles, or define your own."
   - image_path: https://www.dropbox.com/s/d75rslzv75hqbm9/opendoor.jpg?raw=1
     title: "Open Source"
-    excerpt: "Free and Open Source"
+    excerpt: "Free and Open Source {{ site.name }} {{ site.title }}"
 ---
 [![GitHub release](https://img.shields.io/github/release/mlund/faunus.svg)](https://github.com/mlund/faunus/releases/latest)
 [![DOI](https://img.shields.io/badge/DOI-10%2Fnvn-orange.svg)](http://dx.doi.org/10/nvn)
