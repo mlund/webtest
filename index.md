@@ -16,7 +16,7 @@ feature_row:
     alt: "placeholder image 1"
     title: "Extreme Flexibility"
     excerpt: "Arbitrary Hamiltonians, pair-potentials, and ensembles"
-  - image_path: https://www.dropbox.com/s/djqi4dfhl4ee365/deathstar.png?raw=1
+  - image_path: https://www.dropbox.com/s/d75rslzv75hqbm9/opendoor.jpg?dl=0?raw=1
     alt: "placeholder image 2"
     title: "Open Source"
     excerpt: "Free and Open Source"
