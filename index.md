@@ -6,9 +6,9 @@ header:
   overlay_filter: "0.6"
   #overlay_image: http://www.worldtechtoday.com/wp-content/uploads/2016/04/bigstock-Water-Molecules-984772.jpg
   overlay_image: https://www.wired.com/images_blogs/dangerroom/2013/02/hoth-atat.jpg
-  cta_label: "Download"
+  cta_label: "Install Now"
   cta_url: "https://github.com/mlund/faunus/releases/latest"
-  caption: # "Photo credit: [**Unsplash**](https://unsplash.com)"
+  caption: "Photo credit: [Spencer Ackerman](https://www.wired.com)"
 excerpt: "The Monte Carlo code you're looking for."
 ---
 [![GitHub release](https://img.shields.io/github/release/mlund/faunus.svg)](https://github.com/mlund/faunus/releases/latest)
