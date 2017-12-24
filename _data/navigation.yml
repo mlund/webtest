@@ -1,12 +1,10 @@
 # main links
 main:
-  - title: "Home"
-    url: /
   - title: "Docs"
     url: /docs
   - title: "Gallery"
     url: /gallery/
-  - title: "Contact"
+  - title: "Support"
     url: http://github.com/mlund/faunus/issues
 
 docs:
