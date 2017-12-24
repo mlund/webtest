@@ -8,7 +8,7 @@ header:
   cta_label: "Download"
   cta_url: "https://github.com/mlund/faunus/releases/latest"
   caption: # "Photo credit: [**Unsplash**](https://unsplash.com)"
-excerpt: "The Monte Carlo code you're looking for..."
+excerpt: "The Monte Carlo code you're looking for"
 ---
 [![GitHub release](https://img.shields.io/github/release/mlund/faunus.svg)](https://github.com/mlund/faunus/releases/latest)
 [![DOI](https://img.shields.io/badge/DOI-10%2Fnvn-orange.svg)](http://dx.doi.org/10/nvn)
