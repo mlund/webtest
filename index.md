@@ -16,8 +16,8 @@ feature_row:
     title: "Extreme Flexibility"
     excerpt: "Arbitrary Hamiltonian and Statistical Mechanical Ensembles through a modern, modular C++ framework that can easily be extended."
   - image_path: https://www.dropbox.com/s/djqi4dfhl4ee365/deathstar.png?raw=1
-    title: "Anisotropic Particles"
-    excerpt: "Spheres, Sphero-cylinders, Death Star Particles, Dipoles, Quadrupoles, or define your own."
+    title: "Patchy Particles"
+    excerpt: "Spheres, Sphero-cylinders, Death Star Particles, Dipoles, Quadrupoles, or define your own anisotropic particle."
   - image_path: https://www.dropbox.com/s/r126un7q577ugxw/opensource-400.png?raw=1
     title: "Open Source"
     excerpt: "Hoth is public, open source software and freely available through Github."

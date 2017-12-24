@@ -11,10 +11,10 @@ minimal_mistakes_skin    : "default" #"default", "air", "aqua", "contrast", "dar
 
 # Site Settings
 locale                   : "en"
-title                    : "Faunus"
+title                    : "Hoth"
 title_separator          : "-"
 name                     : "Mikael Lund"
-description              : "Official homepage of Faunus"
+description              : "Official homepage of Hoth"
 url                      : "https://mlund.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/webtest" # the subpath of your site, e.g. "/blog"
 repository               : "mlund/webtest" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
