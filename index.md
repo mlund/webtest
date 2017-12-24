@@ -1,5 +1,5 @@
 ---
-title: "Hoth System Simulator"
+title: "Hoth Simulator"
 layout: splash
 header:
   overlay_color: "#000"
@@ -8,13 +8,31 @@ header:
   overlay_image: https://www.wired.com/images_blogs/dangerroom/2013/02/hoth-atat.jpg
   cta_label: "Install Now"
   cta_url: "https://github.com/mlund/faunus/releases/latest"
-  caption: "Photo credit: [Spencer Ackerman](https://www.wired.com)"
-excerpt: "The Monte Carlo code you're looking for."
+  caption: "ackerman s."
+excerpt: "This is the Monte Carlo code you're looking for."
+
+feature_row:
+  - image_path: https://i2.wp.com/thecricketmind.com/wp-content/uploads/2016/04/flexibility.jpg
+    alt: "placeholder image 1"
+    title: "Extreme Flexibility"
+    excerpt: "Arbitrary Hamiltonians, pair-potentials, and ensembles"
+  - image_path: http://twiki.org/p/pub/Blog/BlogEntry201207x1/opensource-400.png
+    alt: "placeholder image 2"
+    title: "Open Source"
+    excerpt: "Free and Open Source"
+    url: "#test-link"
+    btn_label: "Read More"
+    btn_class: "btn--inverse"
+  - image_path: http://www.thinkgeek.com/images/products/zoom/d314_death_star_wall_cling.jpg
+    title: "Anisotropic Particles"
+    excerpt: "Spheres, Sphero-cylinders, Death Star Particles, Dipoles, Quadrupoles"
 ---
 [![GitHub release](https://img.shields.io/github/release/mlund/faunus.svg)](https://github.com/mlund/faunus/releases/latest)
 [![DOI](https://img.shields.io/badge/DOI-10%2Fnvn-orange.svg)](http://dx.doi.org/10/nvn)
 [![DOI](https://img.shields.io/badge/DOI-10%2Fdfqgch-orange.svg)](http://dx.doi.org/10/dfqgch)
 [![DOI](https://img.shields.io/badge/Edit-github-lightgrey.svg?style=social)](http://)
+
+{% include feature_row %}
 
 # Features:
 
@@ -24,8 +42,3 @@ excerpt: "The Monte Carlo code you're looking for."
 - Ion titration moves (pKa prediction, Hofmeister effects etc.)
 - Modular and very flexible
 - Free and open source (**GPL**)
-
-# Videos
-
-<iframe src="https://docs.google.com/file/d/0BzpLUBrTxmurRzN0RnFZc2lhZFE/preview" width="640" height="385"></iframe>
-
