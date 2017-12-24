@@ -3,13 +3,13 @@ title: "Hoth Simulator"
 layout: splash
 header:
   overlay_color: "#000"
-  overlay_filter: "0.6"
+  overlay_filter: "0.5"
   #overlay_image: http://www.worldtechtoday.com/wp-content/uploads/2016/04/bigstock-Water-Molecules-984772.jpg
   overlay_image: https://www.wired.com/images_blogs/dangerroom/2013/02/hoth-atat.jpg
   cta_label: "Install Now"
   cta_url: "https://github.com/mlund/faunus/releases/latest"
-  caption: "ackerman s."
-excerpt: "_...the Monte Carlo code you're looking for_"
+  caption: # image credit:
+excerpt: "_...the Monte Carlo code you're looking for!_"
 
 feature_row:
   - image_path: https://www.dropbox.com/s/bp8tk5xilszliod/flexibility.jpg?raw=1
@@ -25,7 +25,6 @@ feature_row:
 [![GitHub release](https://img.shields.io/github/release/mlund/faunus.svg)](https://github.com/mlund/faunus/releases/latest)
 [![DOI](https://img.shields.io/badge/DOI-10%2Fnvn-orange.svg)](http://dx.doi.org/10/nvn)
 [![DOI](https://img.shields.io/badge/DOI-10%2Fdfqgch-orange.svg)](http://dx.doi.org/10/dfqgch)
-[![DOI](https://img.shields.io/badge/Edit-github-lightgrey.svg?style=social)](http://)
 
 {% include feature_row %}
 
