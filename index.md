@@ -9,14 +9,14 @@ header:
   cta_label: "Install Now"
   cta_url: "https://github.com/mlund/faunus/releases/latest"
   caption: "ackerman s."
-excerpt: "_...the Monte Carlo code you're looking for._"
+excerpt: "_...the Monte Carlo code you're looking for_"
 
 feature_row:
   - image_path: https://i2.wp.com/thecricketmind.com/wp-content/uploads/2016/04/flexibility.jpg
     alt: "placeholder image 1"
     title: "Extreme Flexibility"
     excerpt: "Arbitrary Hamiltonians, pair-potentials, and ensembles"
-  - image_path: http://twiki.org/p/pub/Blog/BlogEntry201207x1/opensource-400.png
+  - image_path: http://www.thinkgeek.com/images/products/zoom/d314_death_star_wall_cling.jpg
     alt: "placeholder image 2"
     title: "Open Source"
     excerpt: "Free and Open Source"
@@ -30,7 +30,7 @@ feature_row:
 [![DOI](https://img.shields.io/badge/DOI-10%2Fdfqgch-orange.svg)](http://dx.doi.org/10/dfqgch)
 [![DOI](https://img.shields.io/badge/Edit-github-lightgrey.svg?style=social)](http://)
 
-{% include feature_row type="left" %}
+{% include feature_row %}
 
 # Features:
 
