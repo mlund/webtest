@@ -16,12 +16,12 @@ feature_row:
     alt: "placeholder image 1"
     title: "Extreme Flexibility"
     excerpt: "Arbitrary Hamiltonians, pair-potentials, and ensembles"
-  - image_path: http://www.thinkgeek.com/images/products/zoom/d314_death_star_wall_cling.jpg
+  - image_path: https://www.dropbox.com/s/djqi4dfhl4ee365/deathstar.png?dl=1
     alt: "placeholder image 2"
     title: "Open Source"
     excerpt: "Free and Open Source"
     url: "#test-link"
-  - image_path: http://www.thinkgeek.com/images/products/zoom/d314_death_star_wall_cling.jpg
+  - image_path: https://www.dropbox.com/s/djqi4dfhl4ee365/deathstar.png?dl=1
     title: "Anisotropic Particles"
     excerpt: "Spheres, Sphero-cylinders, Death Star Particles, Dipoles, Quadrupoles"
 ---
