@@ -21,8 +21,6 @@ feature_row:
     title: "Open Source"
     excerpt: "Free and Open Source"
     url: "#test-link"
-    btn_label: "Read More"
-    btn_class: "btn--inverse"
   - image_path: http://www.thinkgeek.com/images/products/zoom/d314_death_star_wall_cling.jpg
     title: "Anisotropic Particles"
     excerpt: "Spheres, Sphero-cylinders, Death Star Particles, Dipoles, Quadrupoles"
@@ -32,7 +30,7 @@ feature_row:
 [![DOI](https://img.shields.io/badge/DOI-10%2Fdfqgch-orange.svg)](http://dx.doi.org/10/dfqgch)
 [![DOI](https://img.shields.io/badge/Edit-github-lightgrey.svg?style=social)](http://)
 
-{% include feature_row %}
+{% include feature_row type="center" %}
 
 # Features:
 
