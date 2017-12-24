@@ -9,7 +9,7 @@ header:
   cta_label: "Install Now"
   cta_url: "https://github.com/mlund/faunus/releases/latest"
   caption: "ackerman s."
-excerpt: "This is the Monte Carlo code you're looking for."
+excerpt: "_...the Monte Carlo code you're looking for._"
 
 feature_row:
   - image_path: https://i2.wp.com/thecricketmind.com/wp-content/uploads/2016/04/flexibility.jpg
@@ -30,7 +30,7 @@ feature_row:
 [![DOI](https://img.shields.io/badge/DOI-10%2Fdfqgch-orange.svg)](http://dx.doi.org/10/dfqgch)
 [![DOI](https://img.shields.io/badge/Edit-github-lightgrey.svg?style=social)](http://)
 
-{% include feature_row type="center" %}
+{% include feature_row type="left" %}
 
 # Features:
 
