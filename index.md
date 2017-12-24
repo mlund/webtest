@@ -12,7 +12,7 @@ header:
 excerpt: "_...the Monte Carlo code you're looking for_"
 
 feature_row:
-  - image_path: https://i2.wp.com/thecricketmind.com/wp-content/uploads/2016/04/flexibility.jpg
+  - image_path: https://www.dropbox.com/s/bp8tk5xilszliod/flexibility.jpg?raw=1
     alt: "placeholder image 1"
     title: "Extreme Flexibility"
     excerpt: "Arbitrary Hamiltonians, pair-potentials, and ensembles"
@@ -21,7 +21,7 @@ feature_row:
     title: "Open Source"
     excerpt: "Free and Open Source"
     url: "#test-link"
-  - image_path: https://www.dropbox.com/s/djqi4dfhl4ee365/deathstar.png
+  - image_path: https://www.dropbox.com/s/djqi4dfhl4ee365/deathstar.png?raw=1
     title: "Anisotropic Particles"
     excerpt: "Spheres, Sphero-cylinders, Death Star Particles, Dipoles, Quadrupoles"
 ---
