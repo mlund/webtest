@@ -91,6 +91,13 @@ Additional information regarding electrostatics:
  - [On the dielectric constant](http://dx.doi.org/10.1080/00268978300102721)
  - [Generalized reaction field using ionic strength](http://dx.doi.org/10.1063/1.469273)
 
+
+### Hard Sphere
+`hardsphere`
+
+The hard sphere potential does not take any input. Radii are read from the atomlist at the beginning of the simulation.
+
+
 ### Lennard-Jones
 
 `lennardjones` |  Description
@@ -108,10 +115,20 @@ where the default mixing rule is Lorentz-Berthelot (`LB`):
 $$\sigma_{ij} = \frac{\sigma_i+\sigma_j}{2} \quad \textrm{and} \quad
 \epsilon_{ij} = \sqrt{\epsilon_i \epsilon_j}$$
 
-### Hard Sphere
-`hardsphere`
+ 
+### Weeks-Chandler-Andersen
 
-The hard sphere potential does not take any input. Radii are read from the atomlist at the beginning of the simulation.
+`wca`          |  Description
+-------------  |  ------------------------------------------------
+`mixing=LB`    |  Mixing rule. `LB`
+`ljcustom`     |  Custom $$\epsilon$$ and $$\sigma$$ combinations
+
+Ala Lennard-Jones where the potential is cut and shifted to zero at
+$$r_c=2^{1/6}\sigma$$.
+More info [here](http://dx.doi.org/ct4kh9).
+
+$$ u(r) = 4 \epsilon_{ij} \left ( (\sigma_{ij}/r)^{12} - (\sigma_{ij}/r)^6 + \frac{1}{4} \right ) $$
+
 
 ## Bonded Interactions
 
