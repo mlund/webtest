@@ -180,11 +180,21 @@ for $$r < r_m$$; infinity otherwise.
 `confine`       | Confine molecules in sub-regions
 --------------- | ----------------------------------
 `molecules`     | List of molecule names to confine
+`k=`$$\infty$$  | Harmonic spring constant if outside region
 `type`          | Confinement geometry: `sphere` (more to come!)
 `radius`        | Radius of `sphere`
-`origo`=[0,0,0] | Center of `sphere` - default in the center of the simulation container
+`origo=[0,0,0]` | Center of `sphere` - default in the center of the simulation container
 
-If any atom of a molecule defined in `molecules` are _outside_ the confined space, the configuration have a 
-positive, infinite energy. Note that during equilibration this may cause
-cause strange behavior and you must make sure that displacement parameters are long enough to move the molecule
-into the defined region, or ensure they are all inside before simulation.
+Traps `molecules` inside a given geometry by applying a harmonic potential on all atoms
+if outside the region. The spring constant may be _infinite_ (default) which renders
+the exterior region strictly inaccessible.
+During equilibration it is advised to use a _finite_ spring constant to drive exterior particles inside the
+region.
+
+**Note:**
+Should you insist on equilibrating with $$k=\infty$$, ensure that displacement parameters are long enough
+to transport the molecule inside the allowed region, otherwise all move attempts will be rejected.
+Further, some analysis functions may fail for configurations with unphysical, infinite energies.
+{: .notice--warning}
+
+
