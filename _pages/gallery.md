@@ -4,7 +4,7 @@ toc: false
 permalink: /gallery/
 
 row1:
-  - image_path: http://www1.lsbu.ac.uk/water/images/periodic_box.gif
+  - image_path: https://www.dropbox.com/s/spsfqnphqgutwrd/water.png?raw=1
     alt: "placeholder image 1"
     title: "**Grand Canonical SPC/E water**"
   - image_path: http://www1.lsbu.ac.uk/water/images/periodic_box.gif

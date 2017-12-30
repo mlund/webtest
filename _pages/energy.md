@@ -43,6 +43,7 @@ where $$N$$ is the total number of molecules and atomic species.
 -----------------------|---------------------------
 `nonbonded_coulomblj`  | `coulomb`+`lennardjones`
 `nonbonded_coulombhs`  | `coulomb`+`hardsphere`
+`nonbonded_coulombwca`  | `coulomb`+`wca`
 
 This term loops over pairs of atoms, $$i$$, and $$j$$, summing a given pair-wise additive potential, $$u_{ij}$$,
 
