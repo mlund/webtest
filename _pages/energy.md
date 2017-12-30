@@ -188,16 +188,17 @@ for $$r < r_m$$; infinity otherwise.
 Confines `molecules` in a given region of the simulation container by applying a harmonic potential on
 exterior atom positions, $$\mathbf{r}_i$$:
 
-$$ U_{sphere} = \sum_i^{exterior} k \left ( |\mathbf{O}-\mathbf{r}_i|^2 - a^2 \right ) $$
+$$ U_{sphere} = \frac{1}{2}k \sum_i^{exterior} \left ( |\mathbf{r}_i-\mathbf{O}|^2 - a^2 \right ) $$
 
-where $$\mathbf{O}$$ is the origin, $$a$$ the radius, and $$k$$ is a spring constant
-that may be _infinite_ which renders the exterior region strictly inaccessible.
+where $$\mathbf{O}$$ is the sphere center, $$a$$ the radius, and $$k$$ is a spring constant
+that may be _infinite_ which renders the exterior region strictly inaccessible and may evaluate slightly faster
+than finite values.
 During equilibration it is advised to use a _finite_ spring constant to drive exterior particles inside the
 region.
 
 **Note:**
 Should you insist on equilibrating with $$k=\infty$$, ensure that displacement parameters are large enough
-to transport molecules inside the allowed region, otherwise all move attempts may be rejected.
+to transport molecules inside the allowed region, otherwise all move-attempts may be rejected.
 Further, some analysis routines have undefined behavior for configurations with infinite energies.
 {: .notice--danger}
 
