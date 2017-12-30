@@ -181,13 +181,17 @@ for $$r < r_m$$; infinity otherwise.
 --------------- | -------------------------------------------
 `type`          | Confinement geometry: `sphere`
 `molecules`     | List of molecules to confine (names)
-`k=1000`        | Harmonic spring constant if outside region (kJ/mol).
+`k=1000`        | Harmonic spring constant in kJ/mol or `inf` for infinity.
 `radius`        | Radius of `sphere`
-`origo=[0,0,0]` | Center of `sphere` - defaults to center of simulation container
+`origo=[0,0,0]` | Center of `sphere` - default is center of simulation container
 
-Traps `molecules` inside a given region of the simulation container by applying a harmonic potential on
-exterior atoms.
-The spring constant may be _infinite_ (`inf`) which renders the exterior region strictly inaccessible.
+Confines `molecules` in a given region of the simulation container by applying a harmonic potential on
+exterior atom positions, $$\mathbf{r}_i$$:
+
+$$ U_{sphere} = \sum_i^{exterior} k \left ( |\mathbf{O}-\mathbf{r}_i|^2 - a^2 \right ) $$
+
+where $$\mathbf{O}$$ is the origin, $$a$$ the radius, and $$k$$ is a spring constant
+that may be _infinite_ which renders the exterior region strictly inaccessible.
 During equilibration it is advised to use a _finite_ spring constant to drive exterior particles inside the
 region.
 
