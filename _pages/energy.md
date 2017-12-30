@@ -174,3 +174,17 @@ $$ u(r) = -\frac{1}{2} k r_m^2 \ln \left [ 1-(r/r_m)^2 \right ] $$
 
 for $$r < r_m$$; infinity otherwise.
 
+
+## Geometrical Confinement
+
+`confine`       | Confine molecules in sub-regions
+--------------- | ----------------------------------
+`molecules`     | List of molecule names to confine
+`type`          | Confinement geometry: `sphere` (more to come!)
+`radius`        | Radius of `sphere`
+`origo`=[0,0,0] | Center of `sphere` - default in the center of the simulation container
+
+If any atom of a molecule defined in `molecules` are _outside_ the confined space, the configuration have a 
+positive, infinite energy. Note that during equilibration this may cause
+cause strange behavior and you must make sure that displacement parameters are long enough to move the molecule
+into the defined region, or ensure they are all inside before simulation.
