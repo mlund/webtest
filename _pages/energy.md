@@ -177,24 +177,24 @@ for $$r < r_m$$; infinity otherwise.
 
 ## Geometrical Confinement
 
-`confine`       | Confine molecules in sub-regions
---------------- | ----------------------------------
-`molecules`     | List of molecule names to confine
-`k=`$$\infty$$  | Harmonic spring constant if outside region
-`type`          | Confinement geometry: `sphere` (more to come!)
+`confine`       | Confine molecules to a sub-region
+--------------- | -------------------------------------------
+`type`          | Confinement geometry: `sphere`
+`molecules`     | List of molecules to confine (names)
+`k=1000`        | Harmonic spring constant if outside region (kJ/mol).
 `radius`        | Radius of `sphere`
-`origo=[0,0,0]` | Center of `sphere` - default in the center of the simulation container
+`origo=[0,0,0]` | Center of `sphere` - defaults to center of simulation container
 
-Traps `molecules` inside a given geometry by applying a harmonic potential on all atoms
-if outside the region. The spring constant may be _infinite_ (default) which renders
-the exterior region strictly inaccessible.
+Traps `molecules` inside a given region of the simulation container by applying a harmonic potential on
+exterior atoms.
+The spring constant may be _infinite_ (`inf`) which renders the exterior region strictly inaccessible.
 During equilibration it is advised to use a _finite_ spring constant to drive exterior particles inside the
 region.
 
 **Note:**
-Should you insist on equilibrating with $$k=\infty$$, ensure that displacement parameters are long enough
-to transport the molecule inside the allowed region, otherwise all move attempts will be rejected.
-Further, some analysis functions may fail for configurations with unphysical, infinite energies.
-{: .notice--warning}
+Should you insist on equilibrating with $$k=\infty$$, ensure that displacement parameters are large enough
+to transport molecules inside the allowed region, otherwise all move attempts may be rejected.
+Further, some analysis routines have undefined behavior for configurations with infinite energies.
+{: .notice--danger}
 
 
