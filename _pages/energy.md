@@ -188,9 +188,9 @@ for $$r < r_m$$; infinity otherwise.
 Confines `molecules` in a given region of the simulation container by applying a harmonic potential on
 exterior atom positions, $$\mathbf{r}_i$$:
 
-$$ U_{sphere} = \frac{1}{2}k \sum_i^{exterior} \left ( |\mathbf{r}_i-\mathbf{O}|^2 - a^2 \right ) $$
+$$ U_{sphere} = \frac{1}{2} \sum_i^{exterior} k \left ( |\mathbf{r}_i-\mathbf{O}|^2 - a^2 \right ) $$
 
-where $$\mathbf{O}$$ is the sphere center, $$a$$ the radius, and $$k$$ is a spring constant
+where $$\mathbf{O}$$ is the sphere center (`origo`), $$a$$ the `radius`, and $$k$$ is a spring constant
 that may be _infinite_ which renders the exterior region strictly inaccessible and may evaluate slightly faster
 than finite values.
 During equilibration it is advised to use a _finite_ spring constant to drive exterior particles inside the
