@@ -201,25 +201,25 @@ Further, some analysis routines have undefined behavior for configurations with 
 
 Available values for `type` and their additional keywords:
 
-`type=cuboid`   | Confine in cuboid
+`cuboid`        | Confine in cuboid
 --------------- | --------------------------
 `low`           | Lower corner $$[x,y,z]$$
 `high`          | Higher corner $$[x,y,z]$$
+--------------- | ---------------------------
+`cube`          | hej
 
-`type=sphere`   | Confine in sphere
+`sphere`        | Confine in sphere
 --------------- | --------------------------
 `radius`        | Radius
 `origo=[0,0,0]` | Center of sphere
-
-$$ f_i = |\mathbf{r}_i-\mathbf{O}|_{xyz}^2 - a^2 $$
+$$f_i$$         | $$ |\mathbf{r}_i-\mathbf{O}|_{xyz}^2 - a^2 $$
 
 where $$\mathbf{O}$$ is the sphere center (`origo`); $$a$$ the `radius`.
 
 `type=cylinder` | Confine in cylinder along $$z$$-axis
 --------------- | ------------------------------------
 `radius`        | Radius
-
-$$ f_i = |\mathbf{r}_i-\mathbf{O}|_{xy}^2 - a^2 $$
+$$f_i$$         | $$ |\mathbf{r}_i-\mathbf{O}|_{xy}^2 - a^2 $$
 
 **Note:**
 If using periodic boundary conditions and the minimum image convention, you may (or may not) want to set i.e.
