@@ -181,9 +181,9 @@ for $$r < r_m$$; infinity otherwise.
 
 `confine`    | Confine molecules to a sub-region
 ------------ | -------------------------------------------
-`type`       | Confinement geometry: `sphere`
+`type`       | Confinement geometry: `sphere`, `cylinder`, or `cuboid`
 `molecules`  | List of molecules to confine (names)
-`k`          | Harmonic spring constant in kJ/mol or `inf` for infinity.
+`k`          | Harmonic spring constant in kJ/mol or `inf` for infinity
 
 Confines `molecules` in a given region of the simulation container by applying a harmonic potential on
 exterior atom positions, $$\mathbf{r}_i$$:
@@ -203,16 +203,16 @@ Further, some analysis routines have undefined behavior for configurations with 
 
 Available values for `type` and their additional keywords:
 
-`sphere`        | Confine in sphere
+`sphere         | Confine in sphere
 --------------- | -----------------------------------------
 `radius`        | Radius ($$a$$)
 `origo=[0,0,0]` | Center of sphere ($$\mathbf{O}$$)
-$$f_i$$         | $$\|(\mathbf{r}_i-\mathbf{O})\|^2 - a^2$$
+$$f_i$$         | $$\|\mathbf{r}_i-\mathbf{O}\|^2 - a^2$$
 
 `cylinder`      | Confine in cylinder along $$z$$-axis
 --------------- | ----------------------------------------
 `radius`        | Radius ($$a$$)
-`origo=[0,0,0]` | Center of sphere ($$\mathbf{O}$$)
+`origo=[0,0,*]` | Center of cylinder ($$\mathbf{O}$$, $$z$$-value ignored)
 $$f_i$$         | $$\|(\mathbf{r}_i-\mathbf{O})\circ \mathbf{d}\|^2 - a^2$$
 
 where $$\mathbf{d}=(1,1,0)$$ and $$\circ$$ is the entrywise (Hadamard) product.
@@ -223,8 +223,8 @@ where $$\mathbf{d}=(1,1,0)$$ and $$\circ$$ is the entrywise (Hadamard) product.
 `high`          | Higher corner $$[x,y,z]$$
 $$f_i$$         | $$\sum_{\alpha\in \{x,y,z\} } (\delta r_{i,\alpha})^2 $$
 
-where $$\delta r$$ are distances to the confining, cuboidal faces defined
-by the point `low` whose elements must be smaller than or equal to the corresponding elements of
-the point `high`.
+where $$\delta r$$ are distances to the confining, cuboidal faces.
+Note that the elements of `low` must be smaller than or equal to the corresponding
+elements of `high`.
 
 
