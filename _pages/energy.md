@@ -205,7 +205,7 @@ Further, some analysis routines have undefined behavior for configurations with 
 Available values for `type` and their additional keywords:
 
 `sphere`        | Confine in sphere
---------------- | -----------------------------------------
+--------------- | -------------------------------------
 `radius`        | Radius ($$a$$)
 `origo=[0,0,0]` | Center of sphere ($$\mathbf{O}$$)
 $$f_i$$         | $$\|\mathbf{r}_i-\mathbf{O}\|^2 - a^2$$
@@ -214,18 +214,16 @@ $$f_i$$         | $$\|\mathbf{r}_i-\mathbf{O}\|^2 - a^2$$
 --------------- | ----------------------------------------
 `radius`        | Radius ($$a$$)
 `origo=[0,0,*]` | Center of cylinder ($$\mathbf{O}$$, $$z$$-value ignored)
-$$f_i$$         | $$\|(\mathbf{r}_i-\mathbf{O})\circ \mathbf{d}\|^2 - a^2$$
+$f_i$           | $\|(\mathbf{r}_i-\mathbf{O})\circ \mathbf{d}\|^2 - a^2$
 
 where $$\mathbf{d}=(1,1,0)$$ and $$\circ$$ is the entrywise (Hadamard) product.
 
 `cuboid`        | Confine in cuboid
 --------------- | --------------------------
-`low`           | Lower corner $$[x,y,z]$$
-`high`          | Higher corner $$[x,y,z]$$
-$$f_i$$         | $$\sum_{\alpha\in \{x,y,z\} } (\delta r_{i,\alpha})^2 $$
+`low`           | Lower corner $[x,y,z]$
+`high`          | Higher corner $[x,y,z]$
+$f_i$           | $\sum_{\alpha\in \{x,y,z\} } (\delta r_{i,\alpha})^2$
 
 where $$\delta r$$ are distances to the confining, cuboidal faces.
 Note that the elements of `low` must be smaller than or equal to the corresponding
 elements of `high`.
-
-
