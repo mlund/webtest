@@ -3,7 +3,7 @@ permalink: /energy/
 sidebar:
     nav: "docs"
 ---
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 # Energy <a name="energy"></a>
 
@@ -214,15 +214,15 @@ $$f_i$$         | $$\|\mathbf{r}_i-\mathbf{O}\|^2 - a^2$$
 --------------- | ----------------------------------------
 `radius`        | Radius ($$a$$)
 `origo=[0,0,*]` | Center of cylinder ($$\mathbf{O}$$, $$z$$-value ignored)
-$f_i$           | $\|(\mathbf{r}_i-\mathbf{O})\circ \mathbf{d}\|^2 - a^2$
+$$f_i$$         | $$\vert (\mathbf{r}_i-\mathbf{O})\circ \mathbf{d}\vert^2 - a^2$$
 
 where $$\mathbf{d}=(1,1,0)$$ and $$\circ$$ is the entrywise (Hadamard) product.
 
 `cuboid`        | Confine in cuboid
 --------------- | --------------------------
-`low`           | Lower corner $[x,y,z]$
-`high`          | Higher corner $[x,y,z]$
-$f_i$           | $\sum_{\alpha\in \{x,y,z\} } (\delta r_{i,\alpha})^2$
+`low`           | Lower corner $$[x,y,z]$$
+`high`          | Higher corner $$[x,y,z]$$
+$$f_i$$         | $$\sum_{\alpha\in \{x,y,z\} } (\delta r_{i,\alpha})^2$$
 
 where $$\delta r$$ are distances to the confining, cuboidal faces.
 Note that the elements of `low` must be smaller than or equal to the corresponding
