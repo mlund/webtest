@@ -75,7 +75,7 @@ where $$\mathcal{S}(q=r/R_c)$$ is a splitting function:
  `type`          | $$\mathcal{S}(q)$$                     | Additional keywords | Ref.
  --------------- | -------------------------------------- | ------------------- | ----------------------
  `plain`         | $$ 1 $$                                |                     | [doi](http://doi.org/ctnnsj)
- `none`          | $$ 0 $$                                |                     | 
+ `none`          | $$ 0 $$                                |                     |
  `wolf`          | $$ \text{erfc}(\alpha R_c q)-\text{erfc}(\alpha R_c)q $$ | `alpha`         | [doi](http://doi.org/cfcxdk)
  `fennel`        | $$ \scriptstyle \text{erfc}(\alpha R_c q)-\text{erfc}(\alpha R_c)q + ( q -1 ) q \left( \text{erfc}(\alpha R_c) + \frac{2\alpha R_c}{\sqrt{\pi}} e^{-\alpha^2 R_c^2} \right) $$ | `alpha`| [doi](http://doi.org/bqgmv2)
  `yonezawa`      | $$ 1 + \text{erfc}(\alpha R_c)q + q^2 $$      | `alpha`             | [doi](http://dx.doi.org/10/j97)
@@ -116,7 +116,7 @@ where the default mixing rule is Lorentz-Berthelot (`LB`):
 $$\sigma_{ij} = \frac{\sigma_i+\sigma_j}{2} \quad \textrm{and} \quad
 \epsilon_{ij} = \sqrt{\epsilon_i \epsilon_j}$$
 
- 
+
 ### Weeks-Chandler-Andersen
 
 `wca`          |  Description
@@ -177,29 +177,52 @@ for $$r < r_m$$; infinity otherwise.
 
 ## Geometrical Confinement
 
-`confine`       | Confine molecules to a sub-region
---------------- | -------------------------------------------
-`type`          | Confinement geometry: `sphere`
-`molecules`     | List of molecules to confine (names)
-`k=1000`        | Harmonic spring constant in kJ/mol or `inf` for infinity.
-`radius`        | Radius of `sphere`
-`origo=[0,0,0]` | Center of `sphere` - default is center of simulation container
+`confine`    | Confine molecules to a sub-region
+------------ | -------------------------------------------
+`type`       | Confinement geometry: `sphere`
+`molecules`  | List of molecules to confine (names)
+`k`          | Harmonic spring constant in kJ/mol or `inf` for infinity.
 
 Confines `molecules` in a given region of the simulation container by applying a harmonic potential on
 exterior atom positions, $$\mathbf{r}_i$$:
 
-$$ U_{sphere} = \frac{1}{2} \sum_i^{exterior} k \left ( |\mathbf{r}_i-\mathbf{O}|^2 - a^2 \right ) $$
+$$ U = \frac{1}{2} k \sum^{exterior} f_i $$
 
-where $$\mathbf{O}$$ is the sphere center (`origo`), $$a$$ the `radius`, and $$k$$ is a spring constant
-that may be _infinite_ which renders the exterior region strictly inaccessible and may evaluate slightly faster
-than finite values.
-During equilibration it is advised to use a _finite_ spring constant to drive exterior particles inside the
-region.
+where $$f_i$$ is a function that depends on the confinement `type`,
+and $$k$$ is a spring constant. The latter
+may be _infinite_ which renders the exterior region strictly inaccessible and may evaluate faster than for finite values.
+During equilibration it is advised to use a _finite_ spring constant to drive exterior particles inside the region.
 
 **Note:**
 Should you insist on equilibrating with $$k=\infty$$, ensure that displacement parameters are large enough
-to transport molecules inside the allowed region, otherwise all move-attempts may be rejected.
+to transport molecules inside the allowed region, or all moves may be rejected.
 Further, some analysis routines have undefined behavior for configurations with infinite energies.
 {: .notice--danger}
 
+Available values for `type` and their additional keywords:
 
+`type=cuboid`   | Confine in cuboid
+--------------- | --------------------------
+`low`           | Lower corner $$[x,y,z]$$
+`high`          | Higher corner $$[x,y,z]$$
+
+`type=sphere`   | Confine in sphere
+--------------- | --------------------------
+`radius`        | Radius
+`origo=[0,0,0]` | Center of sphere
+
+$$ f_i = |\mathbf{r}_i-\mathbf{O}|_{xyz}^2 - a^2 $$
+
+where $$\mathbf{O}$$ is the sphere center (`origo`); $$a$$ the `radius`.
+
+`type=cylinder` | Confine in cylinder along $$z$$-axis
+--------------- | ------------------------------------
+`radius`        | Radius
+
+$$ f_i = |\mathbf{r}_i-\mathbf{O}|_{xy}^2 - a^2 $$
+
+**Note:**
+If using periodic boundary conditions and the minimum image convention, you may (or may not) want to set i.e.
+`radius` to less than half the box length to avoid interactions with
+neighboring images.
+{: .notice--info}
