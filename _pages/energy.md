@@ -16,6 +16,7 @@ The energy terms are given as a list to `energy` in the top level input:
 ~~~ yaml
 energy:
     - isobaric: {P/atm: 1}
+    - confine: {type: sphere, radius: 10, molecules: ["water"]}
     - nonbonded_coulomblj:
         lennardjones: {mixing: LB}
         coulomb: {type: plain, epsr: 80, cutoff: 10}
