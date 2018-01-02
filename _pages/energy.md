@@ -11,13 +11,14 @@ The system energy is described by a Hamiltonian where an arbitrary number of pot
 
 $$\mathcal{H}_{sys} = U_1 + U_2 + ... $$
 
-The energy terms are given as a list to `energy` in the top level input:
+The energy terms are given as a list to `energy` in the top level input.
+For example:
 
 ~~~ yaml
 energy:
     - isobaric: { P/atm: 1 }
     - confine:  { type: sphere, radius: 10,
-                 molecules: ["water"] }
+                  molecules: ["water"] }
     - nonbonded_coulomblj:
         lennardjones: { mixing: LB }
         coulomb: { type: plain, epsr: 80, cutoff: 10 }
@@ -203,7 +204,7 @@ Further, some analysis routines have undefined behavior for configurations with 
 
 Available values for `type` and their additional keywords:
 
-`sphere         | Confine in sphere
+`sphere`        | Confine in sphere
 --------------- | -----------------------------------------
 `radius`        | Radius ($$a$$)
 `origo=[0,0,0]` | Center of sphere ($$\mathbf{O}$$)

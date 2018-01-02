@@ -22,6 +22,9 @@ moleculelist:
 
 ## Atom Properties
 
+Atoms are the smallest possible particle entities and their properties are defined in the
+Table below.
+
 `atomlist`    | Description
 ------------- | --------------------------------------------------------
 `activity=0`  | Chemical activity for grand canonical MC [mol/l]
@@ -43,6 +46,20 @@ moleculelist:
 
 ## Molecule Properties
 
+A molecule is a collection of atoms, but they need not be associated
+as real molecules. Two particular modes can be specified.
+
+1. If `atomic=true` the atoms in the molecule are unassociated and is
+   typically used to defined salt particles or any other non-aggregated
+   species. No structure is required, and the molecular center of mass (COM) is
+   unspecified. `Ninit` is used to insert _N_-times the number of 
+   atoms defined in `atoms`.
+
+2. If `atomic=false` the molecule resembles a real molecule and a structure
+   is _required_. `Ninit` is used to insert _N_ molecules.
+
+Properties of molecules and their default values:
+
 `moleculelist`      | Description
 ------------------- | --------------------------------------------------------
 `activity=0`        | Chemical activity for grand canonical MC [mol/l]
@@ -54,7 +71,7 @@ moleculelist:
 `keeppos=false`     | Keep original positions of `structure`
 `Ninactive=0`       | Deactivates `Ninactive` of the inserted molecules
 `Ninit=0`           | How many molecules to insert
-`structure`         | Structure file (`.pqr|.aam|.xyz`)
+`structure`         | Structure file (`.pqr|.aam|.xyz`) - required is `atomic=false`
 `bondlist`          | List of _internal_ bonds (harmonic, dihedrals etc.)
 
 ## Processes
