@@ -207,21 +207,24 @@ Available values for `type` and their additional keywords:
 --------------- | -----------------------------------------
 `radius`        | Radius ($$a$$)
 `origo=[0,0,0]` | Center of sphere ($$\mathbf{O}$$)
-$$f_i$$         | $$\|\mathbf{r}_i-\mathbf{O}\|_{xyz}^2 - a^2$$
+$$f_i$$         | $$\|(\mathbf{r}_i-\mathbf{O})\|^2 - a^2$$
 
 `cylinder`      | Confine in cylinder along $$z$$-axis
 --------------- | ----------------------------------------
-`radius`        | Radius
-$$f_i$$         | $$\mathbf{r}_i-\mathbf{O}_{xy}^2 - a^2$$
+`radius`        | Radius ($$a$$)
+`origo=[0,0,0]` | Center of sphere ($$\mathbf{O}$$)
+$$f_i$$         | $$\|(\mathbf{r}_i-\mathbf{O})\circ \mathbf{d}\|^2 - a^2$$
+
+where $$\mathbf{d}=(1,1,0)$$ and $$\circ$$ is the entrywise (Hadamard) product.
 
 `cuboid`        | Confine in cuboid
 --------------- | --------------------------
 `low`           | Lower corner $$[x,y,z]$$
 `high`          | Higher corner $$[x,y,z]$$
-$$f_i$$         | $$\sum_{\alpha\in {x,y,z}} (\delta r_{i,\alpha})^2 $$
+$$f_i$$         | $$\sum_{\alpha\in \{x,y,z\} } (\delta r_{i,\alpha})^2 $$
 
 where $$\delta r$$ are distances to the confining, cuboidal faces defined
-by the point `low` whose elements must be small than the corresponding elements of
+by the point `low` whose elements must be smaller than or equal to the corresponding elements of
 the point `high`.
 
 
