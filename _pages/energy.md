@@ -203,11 +203,6 @@ Further, some analysis routines have undefined behavior for configurations with 
 
 Available values for `type` and their additional keywords:
 
-`cuboid`        | Confine in cuboid
---------------- | --------------------------
-`low`           | Lower corner $$[x,y,z]$$
-`high`          | Higher corner $$[x,y,z]$$
-
 `sphere`        | Confine in sphere
 --------------- | -----------------------------------------
 `radius`        | Radius ($$a$$)
@@ -219,8 +214,14 @@ $$f_i$$         | $$\|\mathbf{r}_i-\mathbf{O}\|_{xyz}^2 - a^2$$
 `radius`        | Radius
 $$f_i$$         | $$\mathbf{r}_i-\mathbf{O}_{xy}^2 - a^2$$
 
-**Note:**
-If using periodic boundary conditions and the minimum image convention, you may (or may not) want to set i.e.
-`radius` to less than half the box length to avoid interactions with
-neighboring images.
-{: .notice--info}
+`cuboid`        | Confine in cuboid
+--------------- | --------------------------
+`low`           | Lower corner $$[x,y,z]$$
+`high`          | Higher corner $$[x,y,z]$$
+$$f_i$$         | $$\sum_{\alpha\in {x,y,z}} (\delta r_{i,\alpha})^2 $$
+
+where $$\delta r$$ are distances to the confining, cuboidal faces defined
+by the point `low` whose elements must be small than the corresponding elements of
+the point `high`.
+
+
