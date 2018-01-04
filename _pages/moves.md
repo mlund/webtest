@@ -50,9 +50,7 @@ will be tracked.
 `dir=[1,1,1]`    |  Translational directions
 
 As `moltransrot` but instead of operating on the molecular mass center, this translates
-and rotates individual atoms in the group. The repeat is set to the number of atoms in the specified group and
-the displacement parameters `dp` and `dprot` for the individual atoms are taken from the
-atom properties defined in the [topology](../topology).
+and rotates individual atoms in the group. The repeat is set to the number of atoms in the specified group and the displacement parameters `dp` and `dprot` for the individual atoms are taken from the atom properties defined in the [topology](../topology).
 
 **Note:**
 Atomic _rotation_ affects only anisotropic particles such as dipoles, spherocylinders, quadrupoles etc.
@@ -67,14 +65,13 @@ Atomic _rotation_ affects only anisotropic particles such as dipoles, spherocyli
 
 Performs a random walk in logarithmic volume,
 
-$$ V^{\prime} = e^{\ln V + \left (\zeta-\frac{1}{2} \right )\cdot dV } $$
+$$
+V^{\prime} = e^{\ln V + \left (\zeta-\frac{1}{2} \right )\cdot dV }
+$$
 
 and scales:
 
 1. molecular mass centers
 2. positions of free atoms (groups with `atomic==true`)
 
-by $$(V^{\prime}/V)^{1/3}$$.
-This is typically used for the $$NPT$$ ensemble, and for this an additional
-pressure term should be added to the Hamiltonian.
-
+by $$(V^{\prime}/V)^{1/3}$$. This is typically used for the $$NPT$$ ensemble, and for this an additional pressure term should be added to the Hamiltonian.

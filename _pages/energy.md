@@ -9,7 +9,9 @@ sidebar:
 
 The system energy is described by a Hamiltonian where an arbitrary number of potential energy terms can be added,
 
-$$\mathcal{H}_{sys} = U_1 + U_2 + ... $$
+$$
+\mathcal{H}_{sys} = U_1 + U_2 + ...
+$$
 
 The energy terms are given as a list to `energy` in the top level input.
 For example:
@@ -34,7 +36,9 @@ energy:
 This adds the following pressure term[^frenkel] to the Hamiltonian, appropriate for
 MC moves in $$\ln V$$:
 
-$$ U = PV - k_BT\left ( N + 1 \right ) \ln V $$
+$$
+U = PV - k_BT\left ( N + 1 \right ) \ln V
+$$
 
 where $$N$$ is the total number of molecules and atomic species.
 
@@ -71,7 +75,9 @@ This is a multipurpose pair potential that handles several variants of electrost
 pair-potentials. Beyond a spherical cutoff, $$R_c$$, the potential is zero while if
 below,
 
-$$ u_{ij} = \frac{e^2 z_i z_j }{ 4\pi\epsilon_0\epsilon_r r_{ij} }\mathcal{S}(q)$$
+$$
+u_{ij} = \frac{e^2 z_i z_j }{ 4\pi\epsilon_0\epsilon_r r_{ij} }\mathcal{S}(q)
+$$
 
 where $$\mathcal{S}(q=r/R_c)$$ is a splitting function:
 
@@ -111,14 +117,17 @@ The hard sphere potential does not take any input. Radii are read from the atoml
 
 The Lennard-Jones potential has the form:
 
-$$ u_{ij} = 4\epsilon_{ij} \left (
-    \left ( \frac{\sigma_{ij}} {r_{ij})} \right )^{12} - \left ( \frac{\sigma_{ij}}{r_{ij})}\right )^6 \right ) $$
+$$
+u_{ij} = 4\epsilon_{ij} \left (
+    \left ( \frac{\sigma_{ij}} {r_{ij})} \right )^{12} - \left ( \frac{\sigma_{ij}}{r_{ij})}\right )^6 \right )
+$$
 
 where the default mixing rule is Lorentz-Berthelot (`LB`):
 
-$$\sigma_{ij} = \frac{\sigma_i+\sigma_j}{2} \quad \textrm{and} \quad
-\epsilon_{ij} = \sqrt{\epsilon_i \epsilon_j}$$
-
+$$
+\sigma_{ij} = \frac{\sigma_i+\sigma_j}{2} \quad \textrm{and} \quad
+\epsilon_{ij} = \sqrt{\epsilon_i \epsilon_j}
+$$
 
 ### Weeks-Chandler-Andersen
 
@@ -127,12 +136,11 @@ $$\sigma_{ij} = \frac{\sigma_i+\sigma_j}{2} \quad \textrm{and} \quad
 `mixing=LB`    |  Mixing rule. `LB`
 `ljcustom`     |  Custom $$\epsilon$$ and $$\sigma$$ combinations
 
-Ala Lennard-Jones where the potential is cut and shifted to zero at
-$$r_c=2^{1/6}\sigma$$.
-More info [here](http://dx.doi.org/ct4kh9).
+Ala Lennard-Jones where the potential is cut and shifted to zero at $$r_c=2^{1/6}\sigma$$. More info [here](http://dx.doi.org/ct4kh9).
 
-$$ u(r) = 4 \epsilon_{ij} \left ( (\sigma_{ij}/r)^{12} - (\sigma_{ij}/r)^6 + \frac{1}{4} \right ) $$
-
+$$
+u(r) = 4 \epsilon_{ij} \left ( (\sigma_{ij}/r)^{12} - (\sigma_{ij}/r)^6 + \frac{1}{4} \right )
+$$
 
 ## Bonded Interactions
 
@@ -163,7 +171,9 @@ Bonded potential types:
 `req`          | Equilibrium distance (Å)
 `index`        | array with _exactly two_ index (relative to molecule)
 
-$$ u(r) = \frac{1}{2}k(r-r_{eq})^2 $$
+$$
+u(r) = \frac{1}{2}k(r-r_{eq})^2
+$$
 
 ### Finite Extensible Nonlinear Elastic
 
@@ -173,10 +183,11 @@ $$ u(r) = \frac{1}{2}k(r-r_{eq})^2 $$
 `rmax`         | Maximum separation, $$r_m$$ (Å)
 `index`        | array with _exactly two_ index (relative to molecule)
 
-$$ u(r) = -\frac{1}{2} k r_m^2 \ln \left [ 1-(r/r_m)^2 \right ] $$
+$$
+u(r) = -\frac{1}{2} k r_m^2 \ln \left [ 1-(r/r_m)^2 \right ]
+$$
 
 for $$r < r_m$$; infinity otherwise.
-
 
 ## Geometrical Confinement
 
@@ -189,7 +200,9 @@ for $$r < r_m$$; infinity otherwise.
 Confines `molecules` in a given region of the simulation container by applying a harmonic potential on
 exterior atom positions, $$\mathbf{r}_i$$:
 
-$$ U = \frac{1}{2} k \sum^{exterior} f_i $$
+$$
+U = \frac{1}{2} k \sum^{exterior} f_i
+$$
 
 where $$f_i$$ is a function that depends on the confinement `type`,
 and $$k$$ is a spring constant. The latter
@@ -197,9 +210,7 @@ may be _infinite_ which renders the exterior region strictly inaccessible and ma
 During equilibration it is advised to use a _finite_ spring constant to drive exterior particles inside the region.
 
 **Note:**
-Should you insist on equilibrating with $$k=\infty$$, ensure that displacement parameters are large enough
-to transport molecules inside the allowed region, or all moves may be rejected.
-Further, some analysis routines have undefined behavior for configurations with infinite energies.
+Should you insist on equilibrating with $$k=\infty$$, ensure that displacement parameters are large enough to transport molecules inside the allowed region, or all moves may be rejected. Further, some analysis routines have undefined behavior for configurations with infinite energies.
 {: .notice--danger}
 
 Available values for `type` and their additional keywords:
@@ -208,7 +219,7 @@ Available values for `type` and their additional keywords:
 --------------- | -------------------------------------
 `radius`        | Radius ($$a$$)
 `origo=[0,0,0]` | Center of sphere ($$\mathbf{O}$$)
-$$f_i$$         | $$\|\mathbf{r}_i-\mathbf{O}\|^2 - a^2$$
+$$f_i$$         | $$\vert\mathbf{r}_i-\mathbf{O}\vert^2 - a^2$$
 
 `cylinder`      | Confine in cylinder along $$z$$-axis
 --------------- | ----------------------------------------
@@ -227,3 +238,24 @@ $$f_i$$         | $$\sum_{\alpha\in \{x,y,z\} } (\delta r_{i,\alpha})^2$$
 where $$\delta r$$ are distances to the confining, cuboidal faces.
 Note that the elements of `low` must be smaller than or equal to the corresponding
 elements of `high`.
+
+## Electrolyte Contact
+
+`tfe`        | SASA Transfer Free Energy
+------------ | --------------------------------------------
+`radius=1.4` | Probe radius for SASA calculation (angstrom)
+`molarity`   | Molar concentration of co-solute
+
+Calculates the free energy contribution due to solute contact
+with a surrounding co-solute, typically an electrolyte. This is done by calculating
+solvent accessible surface areas (SASA) for each atom and use transfer free energies
+via the `tfe` value in `AtomData`.
+
+$$
+U = \sum_i^N \mbox{SASA}_i \varepsilon_{tfe,i} c
+$$
+
+where $c$ is the molar concentration of the co-solute.
+
+For more information, see: http://dx.doi.org/10.1002/jcc.21844
+ 

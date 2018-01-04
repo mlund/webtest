@@ -51,8 +51,10 @@ For atomic groups, densities of individual atom types are reported.
 
 We sample the pair correlation function between atom id's _i_ and _j_,
 
-$$ g_{ij}(r) = \frac{ N_{ij}(r) }{ \sum_{r=0}^{\infty} N_{ij}(r) }
-\cdot \frac{ \langle V \rangle }{ V(r) } $$
+$$
+g_{ij}(r) = \frac{ N_{ij}(r) }{ \sum_{r=0}^{\infty} N_{ij}(r) }
+\cdot \frac{ \langle V \rangle }{ V(r) }
+$$
 
 where $$N_{ij}(r)$$ is the number of observed pairs, accumulated over the
 entire ensemble, in the separation
@@ -115,12 +117,14 @@ scaling the simulation volume to $$V+\Delta V$$ along with
 molecular mass centers and atomic positions. The excess pressure is evatuated
 as a Widom average:
 
-$$ p^{ex} = -\frac{k_BT}{\Delta V} \ln
-    \langle e^{-\delta u / k_BT} \rangle_{NVT} $$
+$$
+p^{ex} = -\frac{k_BT}{\Delta V} \ln
+    \langle e^{-\delta u / k_BT} \rangle_{NVT}
+$$
 
 For more advanced applications of volume perturbations (pressure tensors, surface tension etc.)
 see [here](http://dx.doi.org/10.1063/1.4767375).
- 
+
 ## Widom Insertion
 
 `widom`       | Description
@@ -136,7 +140,9 @@ the system and calculate a [Widom average](https://doi.org/10.1063/1.1734110)
 to measure the free energy of the insertion process, _i.e._ the
 excess chemical potential:
 
-$$ \mu^{ex} = -k_BT \ln \langle e^{-\delta u/k_BT} \rangle_0 $$
+$$
+\mu^{ex} = -k_BT \ln \langle e^{-\delta u/k_BT} \rangle_0
+$$
 
 where $$\delta u$$ is the energy change of the perturbation and the
 average runs over the _unperturbed_ ensemble.
@@ -151,7 +157,7 @@ generated. For use with rod-like particles on surfaces, the `absz`
 keyword may be used to ensure orientations on only one
 half-sphere.
 
- 
+
 ## XTC trajectory
 
 `xtcfile`      |  Description
@@ -159,4 +165,4 @@ half-sphere.
 `file`         |  Filename of output xtc file
 `nstep=0`      |  Interval between samples.
 
-Save configurations to a Gromacs XTC trajectory file. 
+Save configurations to a Gromacs XTC trajectory file.
