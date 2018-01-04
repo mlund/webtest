@@ -252,7 +252,7 @@ solvent accessible surface areas (SASA) for each atom and use transfer free ener
 via the `tfe` value in `AtomData`.
 
 $$
-U = \sum_i^N \mbox{SASA}_i \varepsilon_{tfe,i} c
+U = c \sum_i^N A_i \varepsilon_{tfe,i}
 $$
 
 where $c$ is the molar concentration of the co-solute.
