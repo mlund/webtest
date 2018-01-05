@@ -253,13 +253,13 @@ Calculates the free energy contribution due to
 2. co-solvent concentration (typically electrolytes)
 
 via a [fast SASA calculation](http://dx.doi.org/10.1002/jcc.21844) for each atom.
-The energy term can be written as,
+The energy term is:
 
 $$
-U = \sum_i^N \mbox{A}_i \left ( \gamma_i + c \cdot \varepsilon_{\mbox{\scriptsize{tfe}},i} \right )
+U = \sum_i^N \mbox{A}_i \left ( \gamma_i + c \cdot \varepsilon_{\mbox{\tiny{tfe}},i} \right )
 $$
 
 where $$\gamma$$ is the atomic surface tension, $$c$$ is the molar concentration of the co-solute,
-and $$\varepsilon_{\mbox{\scriptsize{tfe}}}$$ the atomic transfer free energy, both set in the topology as `tfe` and
+and $$\varepsilon_{\mbox{\tiny{tfe}}}$$ the atomic transfer free energy, both set in the topology as `tfe` and
 `tension`, respectively.
 
