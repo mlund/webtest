@@ -41,7 +41,8 @@ Table below.
 `q=0`         | Valency / partial charge number [$$e$$]
 `r=0`         | Radius = `sigma/2` [Å]
 `sigma=0`     | `2r` [Å] (overrides radius)
-`tfe=0`       | Transfer free energy [J/mol/Å$$^2$$/M]
+`tension=0`   | Surface tension [kJ/mol/Å$$^2$$]
+`tfe=0`       | Transfer free energy [kJ/mol/Å$$^2$$/M]
 `alphax`      | Excess polarizability in units of [Å$$^3$$]
 
 ## Molecule Properties

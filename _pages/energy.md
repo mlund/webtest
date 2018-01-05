@@ -246,16 +246,17 @@ elements of `high`.
 `radius=1.4` | Probe radius for SASA calculation (angstrom)
 `molarity`   | Molar concentration of co-solute
 
-Calculates the free energy contribution due to solute contact
+Calculates the free energy contribution due to surface tension and solute contact
 with a surrounding co-solute, typically an electrolyte. This is done by calculating
-solvent accessible surface areas (SASA) for each atom and use transfer free energies
-via the `tfe` value in `AtomData`.
+solvent accessible surface areas (SASA) for each atom and use the `tension` and `tfe` values
+in `AtomData`:
 
 $$
-U = c \sum_i^N A_i \varepsilon_{tfe,i}
+U = \sum_i^N \mbox{A}_i \left ( \gamma_i + c \varepsilon_{tfe,i} \right )
 $$
 
-where $c$ is the molar concentration of the co-solute.
+where $$\gamma$$ is the surface `tension`, $$c$$ is the molar concentration of the co-solute,
+and $$\varepsilon_{tfe}$$ the transfer free energy.
 
-For more information, see: http://dx.doi.org/10.1002/jcc.21844
+[More information](http://dx.doi.org/10.1002/jcc.21844).
  
