@@ -19,8 +19,9 @@ For example:
 ~~~ yaml
 energy:
     - isobaric: { P/atm: 1 }
-    - confine:  { type: sphere, radius: 10,
-                  molecules: ["water"] }
+    - tfe: { molarity: 0.2, radius: 1.4 }
+    - confine: { type: sphere, radius: 10,
+                 molecules: ["water"] }
     - nonbonded_coulomblj:
         lennardjones: { mixing: LB }
         coulomb: { type: plain, epsr: 80, cutoff: 10 }
@@ -239,24 +240,26 @@ where $$\delta r$$ are distances to the confining, cuboidal faces.
 Note that the elements of `low` must be smaller than or equal to the corresponding
 elements of `high`.
 
-## Electrolyte Contact
+## Solvent Accessible Surface Area
 
-`tfe`        | SASA Transfer Free Energy
+`sasa`       | SASA Transfer Free Energy
 ------------ | --------------------------------------------
 `radius=1.4` | Probe radius for SASA calculation (angstrom)
 `molarity`   | Molar concentration of co-solute
 
-Calculates the free energy contribution due to surface tension and solute contact
-with a surrounding co-solute, typically an electrolyte. This is done by calculating
-solvent accessible surface areas (SASA) for each atom and use the `tension` and `tfe` values
-in `AtomData`:
+Calculates the free energy contribution due to
+
+1. surface tension
+2. co-solvent concentration (typically electrolytes)
+
+via a [fast SASA calculation](http://dx.doi.org/10.1002/jcc.21844) for each atom.
+The energy term can be written as,
 
 $$
-U = \sum_i^N \mbox{A}_i \left ( \gamma_i + c \varepsilon_{tfe,i} \right )
+U = \sum_i^N \mbox{A}_i \left ( \gamma_i + c \cdot \varepsilon_{\mbox{\scriptsize{tfe}},i} \right )
 $$
 
-where $$\gamma$$ is the surface `tension`, $$c$$ is the molar concentration of the co-solute,
-and $$\varepsilon_{tfe}$$ the transfer free energy.
+where $$\gamma$$ is the atomic surface tension, $$c$$ is the molar concentration of the co-solute,
+and $$\varepsilon_{\mbox{\scriptsize{tfe}}}$$ the atomic transfer free energy, both set in the topology as `tfe` and
+`tension`, respectively.
 
-[More information](http://dx.doi.org/10.1002/jcc.21844).
- 

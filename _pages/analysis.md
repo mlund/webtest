@@ -16,7 +16,7 @@ analysis:
     - systemenergy: {file: energy.dat, nstep: 500}
     - xtcfile: {file: traj.xtc, nstep: 1000}
     - widom:  {molecule: water, ninsert: 20, nstep: 50}
-    - molrdf: {name1: water, name2: water, nstep: 100}
+    - molrdf: {name1: water, name2: water, nstep: 100,
                dr: 0.1, dim: 3, file: rdf.dat}
     - ...
 ~~~
