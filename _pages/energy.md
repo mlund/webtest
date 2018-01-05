@@ -19,7 +19,7 @@ For example:
 ~~~ yaml
 energy:
     - isobaric: { P/atm: 1 }
-    - tfe: { molarity: 0.2, radius: 1.4 }
+    - sasa: { molarity: 0.2, radius: 1.4 }
     - confine: { type: sphere, radius: 10,
                  molecules: ["water"] }
     - nonbonded_coulomblj:
@@ -245,7 +245,7 @@ elements of `high`.
 `sasa`       | SASA Transfer Free Energy
 ------------ | --------------------------------------------
 `radius=1.4` | Probe radius for SASA calculation (angstrom)
-`molarity`   | Molar concentration of co-solute
+`molarity=0` | Molar concentration of co-solute
 
 Calculates the free energy contribution due to
 
@@ -256,10 +256,10 @@ via a [fast SASA calculation](http://dx.doi.org/10.1002/jcc.21844) for each atom
 The energy term is:
 
 $$
-U = \sum_i^N \mbox{A}_i \left ( \gamma_i + c \cdot \varepsilon_{\text{tfe},i} \right )
+U = \sum_i^N A_{\text{sasa},i} \left ( \gamma_i + c \cdot \varepsilon_{\text{tfe},i} \right )
 $$
 
-where $$\gamma$$ is the atomic surface tension, $$c$$ is the molar concentration of the co-solute,
-and $$\varepsilon_{\text{tfe},i}$$ the atomic transfer free energy, both set in the topology as `tfe` and
-`tension`, respectively.
+where $$c$$ is the molar concentration of the co-solute;
+$$\gamma$$ is the atomic surface tension; and $$\varepsilon_{\text{tfe},i}$$ the atomic transfer free energy,
+both specified in the atom topology with `tension` and `tfe`, respectively.
 
