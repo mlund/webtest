@@ -256,10 +256,10 @@ via a [fast SASA calculation](http://dx.doi.org/10.1002/jcc.21844) for each atom
 The energy term is:
 
 $$
-U = \sum_i^N \mbox{A}_i \left ( \gamma_i + c \cdot \varepsilon_{\mbox{\tiny{tfe}},i} \right )
+U = \sum_i^N \mbox{A}_i \left ( \gamma_i + c \cdot \varepsilon_{\text{tfe},i} \right )
 $$
 
 where $$\gamma$$ is the atomic surface tension, $$c$$ is the molar concentration of the co-solute,
-and $$\varepsilon_{\mbox{\tiny{tfe}}}$$ the atomic transfer free energy, both set in the topology as `tfe` and
+and $$\varepsilon_{\text{tfe},i}$$ the atomic transfer free energy, both set in the topology as `tfe` and
 `tension`, respectively.
 
