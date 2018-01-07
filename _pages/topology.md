@@ -7,17 +7,22 @@ sidebar:
 
 # Topology
 
-The topology describes atomic and molecular properties and is given at the top-level input:
+The topology describes atomic and molecular properties and is defines at the top-level input:
 
 ~~~ yaml
 atomlist:
-    - Hw: {q:  0.4238}
-    - Ow: {q: -0.8476, eps: 0.65, sigma: 3.165, mw: 16}
     - Na: {q:  1.0, sigma: 4, eps: 0.05, dp: 0.4}
-    - Cl: {q: -1.0, sigma: 4, eps: 0.05, dp: 0.4}
+    - Ow: {q: -0.8476, eps: 0.65, sigma: 3.165, mw: 16}
+    - ...
 moleculelist:
-    - water: {Ninit: 256, structure: water.xyz}
-    - salt:  {Ninit: 10, atoms: [Na,Cl], atomic: true}
+    - salt: {Ninit: 10, atoms: [Na,Cl], atomic: true}
+    - water:
+        Ninit: 256
+        structure: water.xyz
+        bondlist:
+            - harmonic: {index: [0,1], k=100; req=1.5}
+            - ...
+    - ...
 ~~~
 
 ## Atom Properties

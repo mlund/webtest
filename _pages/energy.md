@@ -164,6 +164,10 @@ energy:
 
 Bonded potential types:
 
+**Note:**
+$\mu V T$ ensemble and Widom insertion is currently unsupported for molecules with bonds.
+{: .notice--info}
+
 ### Harmonic
 
 `harmonic`     | Harmonic bond
@@ -252,7 +256,7 @@ Calculates the free energy contribution due to
 1. surface tension
 2. co-solvent concentration (typically electrolytes)
 
-via a [fast SASA calculation](http://dx.doi.org/10.1002/jcc.21844) for each atom.
+via a [SASA calculation](http://dx.doi.org/10.1002/jcc.21844) for each atom.
 The energy term is:
 
 $$
@@ -260,6 +264,5 @@ U = \sum_i^N A_{\text{sasa},i} \left ( \gamma_i + c \cdot \varepsilon_{\text{tfe
 $$
 
 where $$c$$ is the molar concentration of the co-solute;
-$$\gamma$$ is the atomic surface tension; and $$\varepsilon_{\text{tfe},i}$$ the atomic transfer free energy,
+$$\gamma_i$$ is the atomic surface tension; and $$\varepsilon_{\text{tfe},i}$$ the atomic transfer free energy,
 both specified in the atom topology with `tension` and `tfe`, respectively.
-

@@ -56,6 +56,17 @@ and rotates individual atoms in the group. The repeat is set to the number of at
 Atomic _rotation_ affects only anisotropic particles such as dipoles, spherocylinders, quadrupoles etc.
 {: .notice--info}
 
+## Pivot
+
+`pivot`          | Description
+---------------- | ----------------------------
+`molecule`       | Molecule name to operate on
+`dptot`          | Rotational displacement
+`repeat=N`       | Number of repeats per MC sweep per bond
+
+Performs a rotation around a random, harmonic bond vector in `molecule`, moving all atoms
+either before _or_ after the bond with equal probability.
+
 ## Volume Move <a name="volumemove"></a>
 
 `volume`         |  Description
@@ -72,6 +83,6 @@ $$
 and scales:
 
 1. molecular mass centers
-2. positions of free atoms (groups with `atomic==true`)
+2. positions of free atoms (groups with `atomic=true`)
 
 by $$(V^{\prime}/V)^{1/3}$$. This is typically used for the $$NPT$$ ensemble, and for this an additional pressure term should be added to the Hamiltonian.
