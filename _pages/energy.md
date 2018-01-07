@@ -134,13 +134,14 @@ $$
 
 `wca`          |  Description
 -------------  |  ------------------------------------------------
-`mixing=LB`    |  Mixing rule. `LB`
+`mixing=LB`    |  Mixing rule; only `LB` available.
 `ljcustom`     |  Custom $$\epsilon$$ and $$\sigma$$ combinations
 
-Ala Lennard-Jones where the potential is cut and shifted to zero at $$r_c=2^{1/6}\sigma$$. More info [here](http://dx.doi.org/ct4kh9).
+Like Lennard-Jones but cut and shifted to zero at the minimum, forming a
+[purely repulsive potential](http://dx.doi.org/ct4kh9),
 
 $$
-u(r) = 4 \epsilon_{ij} \left ( (\sigma_{ij}/r)^{12} - (\sigma_{ij}/r)^6 + \frac{1}{4} \right )
+u_{ij} = u_{ij}^{\text{LJ}} + \epsilon_{ij} \quad \textrm{for} \quad r<2^{1/6}\sigma_{ij}
 $$
 
 ## Bonded Interactions
