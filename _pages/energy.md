@@ -13,7 +13,7 @@ $$
 \mathcal{H}_{sys} = U_1 + U_2 + ...
 $$
 
-The energy terms are given as a list to `energy` in the top level input.
+The energy terms are specified in `energy` at the top level input.
 For example:
 
 ~~~ yaml
@@ -155,18 +155,18 @@ moleculelist:
     - water:
         structure: water.xyz
         bondlist: # index relative to molecule
-            - harmonic: { index=[0,1], k=100, req=1.0 }  
-            - harmonic: { index=[0,2], k=100, req=1.0 }
+            - harmonic: { index: [0,1], k: 100, req: 1.0 }  
+            - harmonic: { index: [0,2], k: 100, req: 1.0 }
 energy:
     - bonded:
         bondlist: # absolute index
-           - harmonic: { index=[56,921], k=10, req=15 }
+           - harmonic: { index: [56,921], k: 10, req: 15 }
 ~~~
 
 Bonded potential types:
 
 **Note:**
-$\mu V T$ ensemble and Widom insertion is currently unsupported for molecules with bonds.
+$$\mu V T$$ ensembles and Widom insertion are currently unsupported for molecules with bonds.
 {: .notice--info}
 
 ### Harmonic
@@ -222,10 +222,10 @@ Should you insist on equilibrating with $$k=\infty$$, ensure that displacement p
 Available values for `type` and their additional keywords:
 
 `sphere`        | Confine in sphere
---------------- | -------------------------------------
+--------------- | -----------------------------
 `radius`        | Radius ($$a$$)
 `origo=[0,0,0]` | Center of sphere ($$\mathbf{O}$$)
-$$f_i$$         | $$\vert\mathbf{r}_i-\mathbf{O}\vert^2 - a^2$$
+$$f_i$$         | $$\vert\mathbf{r}_i-\mathbf{O}\vert^2-a^2$$
 
 `cylinder`      | Confine in cylinder along $$z$$-axis
 --------------- | ----------------------------------------
@@ -254,8 +254,8 @@ elements of `high`.
 
 Calculates the free energy contribution due to
 
-1. surface tension
-2. co-solvent concentration (typically electrolytes)
+1. atomic surface tension
+2. co-solute concentration (typically electrolytes)
 
 via a [SASA calculation](http://dx.doi.org/10.1002/jcc.21844) for each atom.
 The energy term is:
