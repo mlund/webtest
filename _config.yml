@@ -270,4 +270,12 @@ defaults:
       layout: single
       toc: true
 
+  # collections
+  - scope:
+      path: ""
+      type: docss
+    values:
+      layout: single
+      toc: true
+
 
