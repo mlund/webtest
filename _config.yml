@@ -155,12 +155,9 @@ encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 collections:
-    - docs
-
-collections:
-    docs:
+    docs2:
         output: true
-        permalink: /docs/:path/
+        permalink: /docs2/:path/
 
 # Conversion
 markdown: kramdown
