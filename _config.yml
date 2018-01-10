@@ -122,7 +122,6 @@ author:
 include:
   - .htaccess
   - _pages
-  - _docs2
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -156,12 +155,10 @@ encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 collections:
-    - docs2
-
-collections:
-    docs2:
+    docss:
         output: true
-        permalink: /docs2/:path/
+        permalink: /docss/:path/
+
 
 # Conversion
 markdown: kramdown
