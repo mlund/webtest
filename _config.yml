@@ -157,7 +157,7 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 collections:
     docss:
         output: true
-        permalink: /docss/:path/
+        permalink: /:collection/:path/
 
 
 # Conversion
