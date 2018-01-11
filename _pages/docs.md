@@ -14,7 +14,7 @@ MathJax.Hub.Config({
 
 Welcome to the Faunus user manual!
 
-some inline math $\frac{1}{\pi}$ may be possible?
+some inline math $$\frac{1}{\pi}$$ may be possible?
 
 Math block:
 
