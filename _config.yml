@@ -277,5 +277,8 @@ defaults:
     values:
       layout: single
       toc: true
+      title: ""
+      sidebar:
+          nav: "docs"
 
 

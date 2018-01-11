@@ -31,3 +31,7 @@ hddjf
 - Tutorial
   - Water/GCMC
 
+## subsection
+
+$$\frac{1}{\pi}$$
+
